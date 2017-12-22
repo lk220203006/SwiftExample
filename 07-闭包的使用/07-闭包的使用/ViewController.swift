@@ -24,9 +24,30 @@ class ViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("--------")
+        //解决循环引用
+        //方式一 weak
+        weak var weakSelf = self
         tools.loadData { (jsonData) in
             print("在ViewController拿到数据:\(jsonData)")
+            weakSelf?.view.backgroundColor = UIColor.red
+        }
+        
+        //方式二 unowned
+        tools.loadData {[unowned self] (jsonData) in
+            print("在ViewController拿到数据:\(jsonData)")
             self.view.backgroundColor = UIColor.red
+        }
+        
+        //方式三
+        tools.loadData(callBack:  {[weak self] (jsonData) in
+            print("在ViewController拿到数据:\(jsonData)")
+            self?.view.backgroundColor = UIColor.red
+        })
+        
+        //尾随闭包 当闭包是最后一个参数时，可以省略()
+        tools.loadData {[weak self] (jsonData) in
+            print("在ViewController拿到数据:\(jsonData)")
+            self?.view.backgroundColor = UIColor.red
         }
     }
 
