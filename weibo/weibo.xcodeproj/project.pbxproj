@@ -8,19 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		C1F7D1B41FF2198C00263201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7D1B31FF2198C00263201 /* AppDelegate.swift */; };
-		C1F7D1B61FF2198C00263201 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7D1B51FF2198C00263201 /* ViewController.swift */; };
 		C1F7D1B91FF2198C00263201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F7D1B71FF2198C00263201 /* Main.storyboard */; };
 		C1F7D1BB1FF2198C00263201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F7D1BA1FF2198C00263201 /* Assets.xcassets */; };
-		C1F7D1BE1FF2198C00263201 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F7D1BC1FF2198C00263201 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C1F7D1B01FF2198C00263201 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F7D1B31FF2198C00263201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1F7D1B51FF2198C00263201 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1F7D1B81FF2198C00263201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1F7D1BA1FF2198C00263201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C1F7D1BD1FF2198C00263201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1F7D1BF1FF2198C00263201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,14 +50,60 @@
 		C1F7D1B21FF2198C00263201 /* weibo */ = {
 			isa = PBXGroup;
 			children = (
+				C1F7D1CA1FF2235800263201 /* Classes */,
 				C1F7D1B31FF2198C00263201 /* AppDelegate.swift */,
-				C1F7D1B51FF2198C00263201 /* ViewController.swift */,
 				C1F7D1B71FF2198C00263201 /* Main.storyboard */,
 				C1F7D1BA1FF2198C00263201 /* Assets.xcassets */,
-				C1F7D1BC1FF2198C00263201 /* LaunchScreen.storyboard */,
 				C1F7D1BF1FF2198C00263201 /* Info.plist */,
 			);
 			path = weibo;
+			sourceTree = "<group>";
+		};
+		C1F7D1C51FF2226100263201 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C1F7D1C61FF2226D00263201 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C1F7D1C71FF2227200263201 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		C1F7D1C81FF2227A00263201 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		C1F7D1C91FF2228400263201 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C1F7D1CA1FF2235800263201 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C1F7D1C51FF2226100263201 /* Main */,
+				C1F7D1C61FF2226D00263201 /* Home */,
+				C1F7D1C71FF2227200263201 /* Message */,
+				C1F7D1C81FF2227A00263201 /* Discover */,
+				C1F7D1C91FF2228400263201 /* Profile */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +165,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1F7D1BE1FF2198C00263201 /* LaunchScreen.storyboard in Resources */,
 				C1F7D1BB1FF2198C00263201 /* Assets.xcassets in Resources */,
 				C1F7D1B91FF2198C00263201 /* Main.storyboard in Resources */,
 			);
@@ -136,7 +177,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1F7D1B61FF2198C00263201 /* ViewController.swift in Sources */,
 				C1F7D1B41FF2198C00263201 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,14 +190,6 @@
 				C1F7D1B81FF2198C00263201 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C1F7D1BC1FF2198C00263201 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C1F7D1BD1FF2198C00263201 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -274,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q7WQF4WN2Z;
 				INFOPLIST_FILE = weibo/Info.plist;
@@ -281,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.liukun.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -289,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q7WQF4WN2Z;
 				INFOPLIST_FILE = weibo/Info.plist;
@@ -296,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.liukun.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
