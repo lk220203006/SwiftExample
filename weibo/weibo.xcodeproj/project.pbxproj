@@ -10,6 +10,11 @@
 		C1F7D1B41FF2198C00263201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7D1B31FF2198C00263201 /* AppDelegate.swift */; };
 		C1F7D1B91FF2198C00263201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F7D1B71FF2198C00263201 /* Main.storyboard */; };
 		C1F7D1BB1FF2198C00263201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F7D1BA1FF2198C00263201 /* Assets.xcassets */; };
+		C1F7D1CC1FF2272A00263201 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7D1CB1FF2272A00263201 /* MainViewController.swift */; };
+		C1F7D1CE1FF2280300263201 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7D1CD1FF2280300263201 /* HomeViewController.swift */; };
+		C1F7D1D01FF2281900263201 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7D1CF1FF2281900263201 /* MessageViewController.swift */; };
+		C1F7D1D21FF2282700263201 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7D1D11FF2282700263201 /* DiscoverViewController.swift */; };
+		C1F7D1D41FF2283300263201 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7D1D31FF2283300263201 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +23,11 @@
 		C1F7D1B81FF2198C00263201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1F7D1BA1FF2198C00263201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1F7D1BF1FF2198C00263201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1F7D1CB1FF2272A00263201 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C1F7D1CD1FF2280300263201 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C1F7D1CF1FF2281900263201 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		C1F7D1D11FF2282700263201 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		C1F7D1D31FF2283300263201 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,7 @@
 		C1F7D1C51FF2226100263201 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C1F7D1CB1FF2272A00263201 /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -69,6 +80,7 @@
 		C1F7D1C61FF2226D00263201 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C1F7D1CD1FF2280300263201 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -76,6 +88,7 @@
 		C1F7D1C71FF2227200263201 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				C1F7D1CF1FF2281900263201 /* MessageViewController.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -83,6 +96,7 @@
 		C1F7D1C81FF2227A00263201 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				C1F7D1D11FF2282700263201 /* DiscoverViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -90,6 +104,7 @@
 		C1F7D1C91FF2228400263201 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C1F7D1D31FF2283300263201 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -177,7 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1F7D1D41FF2283300263201 /* ProfileViewController.swift in Sources */,
 				C1F7D1B41FF2198C00263201 /* AppDelegate.swift in Sources */,
+				C1F7D1CC1FF2272A00263201 /* MainViewController.swift in Sources */,
+				C1F7D1D01FF2281900263201 /* MessageViewController.swift in Sources */,
+				C1F7D1CE1FF2280300263201 /* HomeViewController.swift in Sources */,
+				C1F7D1D21FF2282700263201 /* DiscoverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
