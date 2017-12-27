@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C14BF9BF1FF36E75001B1110 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = C14BF9BE1FF36E75001B1110 /* MainVCSettings.json */; };
 		C1F7D1B41FF2198C00263201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7D1B31FF2198C00263201 /* AppDelegate.swift */; };
 		C1F7D1B91FF2198C00263201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F7D1B71FF2198C00263201 /* Main.storyboard */; };
 		C1F7D1BB1FF2198C00263201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F7D1BA1FF2198C00263201 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C14BF9BE1FF36E75001B1110 /* MainVCSettings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		C1F7D1B01FF2198C00263201 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F7D1B31FF2198C00263201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1F7D1B81FF2198C00263201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C14BF9BD1FF36E45001B1110 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C14BF9BE1FF36E75001B1110 /* MainVCSettings.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		C1F7D1A71FF2198C00263201 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C1F7D1CB1FF2272A00263201 /* MainViewController.swift */,
+				C14BF9BD1FF36E45001B1110 /* Resource */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 			files = (
 				C1F7D1BB1FF2198C00263201 /* Assets.xcassets in Resources */,
 				C1F7D1B91FF2198C00263201 /* Main.storyboard in Resources */,
+				C14BF9BF1FF36E75001B1110 /* MainVCSettings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
