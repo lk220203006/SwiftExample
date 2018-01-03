@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04BAC77C1FFD259800A00B5D /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC77B1FFD259800A00B5D /* UIButton-Extension.swift */; };
 		C14BF9EB1FF48F49001B1110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14BF9EA1FF48F49001B1110 /* AppDelegate.swift */; };
 		C14BF9F01FF48F49001B1110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14BF9EE1FF48F49001B1110 /* Main.storyboard */; };
 		C14BF9F21FF48F49001B1110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C14BF9F11FF48F49001B1110 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04BAC77B1FFD259800A00B5D /* UIButton-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		C14BF9E71FF48F49001B1110 /* WeiBoWithSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBoWithSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14BF9EA1FF48F49001B1110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C14BF9EF1FF48F49001B1110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04BAC7791FFD251500A00B5D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				04BAC77A1FFD254800A00B5D /* Categary */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		04BAC77A1FFD254800A00B5D /* Categary */ = {
+			isa = PBXGroup;
+			children = (
+				04BAC77B1FFD259800A00B5D /* UIButton-Extension.swift */,
+			);
+			path = Categary;
+			sourceTree = "<group>";
+		};
 		C14BF9DE1FF48F49001B1110 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +105,7 @@
 		C14BF9FC1FF48FE1001B1110 /* class */ = {
 			isa = PBXGroup;
 			children = (
+				04BAC7791FFD251500A00B5D /* Tools */,
 				C14BFA051FF48FE1001B1110 /* Main */,
 				C14BF9FD1FF48FE1001B1110 /* Home */,
 				C14BF9FF1FF48FE1001B1110 /* Discover */,
@@ -229,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C14BFA0A1FF48FE1001B1110 /* DiscoverViewController.swift in Sources */,
+				04BAC77C1FFD259800A00B5D /* UIButton-Extension.swift in Sources */,
 				C14BF9EB1FF48F49001B1110 /* AppDelegate.swift in Sources */,
 				C14BFA0C1FF48FE1001B1110 /* ProfileViewController.swift in Sources */,
 				C14BFA0D1FF48FE1001B1110 /* MainViewController.swift in Sources */,

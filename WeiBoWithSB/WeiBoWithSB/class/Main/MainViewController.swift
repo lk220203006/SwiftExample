@@ -10,7 +10,8 @@ import UIKit
 
 class MainViewController: UITabBarController {
 
-    private lazy var composeBtn:UIButton = UIButton()
+//    private lazy var composeBtn:UIButton = UIButton.createButton(imageName: "", bgImageName: "tabbar_mid")
+    private lazy var composeBtn:UIButton = UIButton(imageName: "", bgImageName: "tabbar_mid")
     override func viewDidLoad() {
         super.viewDidLoad()
         setupComposeBtn()
@@ -21,9 +22,7 @@ class MainViewController: UITabBarController {
 extension MainViewController{
     private func setupComposeBtn(){
         tabBar.addSubview(composeBtn)
-        composeBtn.setBackgroundImage(UIImage(named: "tabbar_mid"), for: .normal)
-        composeBtn.setBackgroundImage(UIImage(named: "tabbar_mid"), for: .highlighted)
-        composeBtn.sizeToFit()
+        
         composeBtn.center = CGPoint.init(x: tabBar.center.x, y: tabBar.bounds.size.height*0.5)
     }
 }
