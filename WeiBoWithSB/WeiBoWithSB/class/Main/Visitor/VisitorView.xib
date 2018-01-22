@@ -67,8 +67,11 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="iconView" destination="6x7-7T-fXt" id="qhZ-hs-PAW"/>
+                <outlet property="loginBtn" destination="clh-yb-GBE" id="NcZ-eP-TXh"/>
+                <outlet property="registerBtn" destination="Wy1-dh-TGK" id="cSA-ry-R9Y"/>
                 <outlet property="tipLabel" destination="f51-dj-ube" id="7Ue-Hz-e28"/>
             </connections>
+            <point key="canvasLocation" x="-362" y="-73"/>
         </view>
     </objects>
     <resources>
