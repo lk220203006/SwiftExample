@@ -112,6 +112,6 @@ extension HomeViewController{
 extension HomeViewController{
     @objc private func titleBtnClick(_ sender:TitleButton){
         NSLog("titleBtnClick")
-        sender.select(<#T##sender: Any?##Any?#>)
+        sender.isSelected = !sender.isSelected
     }
 }
