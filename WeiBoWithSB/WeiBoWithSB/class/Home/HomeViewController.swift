@@ -10,10 +10,17 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
+    private lazy var titleBtn :TitleButton = TitleButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         visitorView.addRotationAnim()
+        if !isLogin {
+            return
+        }
+        
+        setupNavigationBar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,4 +95,23 @@ class HomeViewController: BaseViewController {
     }
     */
 
+}
+
+// MARK:- 设置UI界面
+extension HomeViewController{
+    private func setupNavigationBar(){
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "user")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "scan-o")
+        
+        titleBtn.setTitle("coderwhy", for: .normal)
+        titleBtn.addTarget(self, action: #selector(titleBtnClick(_:)), for: .touchUpInside)
+        navigationItem.titleView = titleBtn
+    }
+}
+
+extension HomeViewController{
+    @objc private func titleBtnClick(_ sender:TitleButton){
+        NSLog("titleBtnClick")
+        sender.select(<#T##sender: Any?##Any?#>)
+    }
 }
