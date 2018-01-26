@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UITabBarController {
 
 //    private lazy var composeBtn:UIButton = UIButton.createButton(imageName: "", bgImageName: "tabbar_mid")
-    private lazy var composeBtn:UIButton = UIButton(imageName: "", bgImageName: "tabbar_mid")
+    private lazy var composeBtn:UIButton = UIButton(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
     override func viewDidLoad() {
         super.viewDidLoad()
         setupComposeBtn()

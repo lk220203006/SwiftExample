@@ -28,6 +28,9 @@ extension UIButton{
         self.init()
         setBackgroundImage(UIImage(named: bgImageName), for: .normal)
         setBackgroundImage(UIImage(named: bgImageName), for: .highlighted)
+        
+        setImage(UIImage(named: imageName), for: .normal)
+        setImage(UIImage(named: imageName), for: .highlighted)
         sizeToFit()
     }
 }

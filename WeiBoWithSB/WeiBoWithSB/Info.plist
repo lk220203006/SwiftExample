@@ -39,5 +39,10 @@
 	</array>
 	<key>CFBundleDisplayName</key>
 	<string>仿微博SB</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

@@ -13,8 +13,8 @@ class TitleButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setImage(UIImage(named: "drop-o-highlighted"), for: .normal)
-        setImage(UIImage(named: "rise-o-highlighted"), for: .selected)
+        setImage(UIImage(named: "navigationbar_arrow_down"), for: .normal)
+        setImage(UIImage(named: "navigationbar_arrow_up"), for: .selected)
         setTitleColor(UIColor.black, for: .normal)
         sizeToFit()
     }

@@ -32,7 +32,7 @@
         <scene sceneID="XWK-4S-vwn">
             <objects>
                 <navigationController id="YnS-Qi-xHA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message" selectedImage="tabbar_message_selected" id="Clf-Ad-kf1"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" selectedImage="tabbar_message_center_selected" id="Clf-Ad-kf1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h7h-sm-5PS">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -47,7 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabbar_message" width="30" height="30"/>
-        <image name="tabbar_message_selected" width="30" height="30"/>
+        <image name="tabbar_message_center" width="30" height="30"/>
+        <image name="tabbar_message_center_selected" width="30" height="30"/>
     </resources>
 </document>
