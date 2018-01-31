@@ -13,7 +13,7 @@ class BaseViewController: UITableViewController {
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     
     // MARK:- 定义变量
-    var isLogin:Bool = true
+    var isLogin:Bool = false
     
     override func loadView() {
         isLogin ? super.loadView():setupVisitorView()
@@ -23,6 +23,7 @@ class BaseViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationItems()
+        automaticallyAdjustsScrollViewInsets = false
     }
 }
 
@@ -49,6 +50,10 @@ extension BaseViewController{
     }
     
     @objc private func rightbarClick(){
-        NSLog("rightbarClick")
+        //创建授权控制器
+        let oauthVC = OAuthViewController()
+        //弹出控制器
+        let oauthNav = UINavigationController(rootViewController: oauthVC)
+        present(oauthNav, animated: true, completion: nil)
     }
 }

@@ -12,7 +12,7 @@
 		C1831C0A2019CCCC00520122 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1831C082019CCCC00520122 /* Main.storyboard */; };
 		C1831C0C2019CCCC00520122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1831C0B2019CCCC00520122 /* Assets.xcassets */; };
 		C1831C0F2019CCCC00520122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1831C0D2019CCCC00520122 /* LaunchScreen.storyboard */; };
-		C1831C172019CD7500520122 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1831C162019CD7500520122 /* NetworkTools.swift */; };
+		C1FB985020200E5F00DFD00D /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB984F20200E5F00DFD00D /* NetworkTools.swift */; };
 		CB22DE457A9448E72F14D2ED /* Pods_AFNetWorking___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058D0D0846D3AE8E10841AF9 /* Pods_AFNetWorking___.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		C1831C0B2019CCCC00520122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1831C0E2019CCCC00520122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1831C102019CCCC00520122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1831C162019CD7500520122 /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		C1FB984F20200E5F00DFD00D /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		EF3A348A8E386068131628F2 /* Pods-AFNetWorking的封装.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFNetWorking的封装.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFNetWorking的封装/Pods-AFNetWorking的封装.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +73,7 @@
 			children = (
 				C1831C042019CCCC00520122 /* AppDelegate.swift */,
 				C1831C062019CCCC00520122 /* ViewController.swift */,
-				C1831C162019CD7500520122 /* NetworkTools.swift */,
+				C1FB984F20200E5F00DFD00D /* NetworkTools.swift */,
 				C1831C082019CCCC00520122 /* Main.storyboard */,
 				C1831C0B2019CCCC00520122 /* Assets.xcassets */,
 				C1831C0D2019CCCC00520122 /* LaunchScreen.storyboard */,
@@ -222,7 +222,7 @@
 			files = (
 				C1831C072019CCCC00520122 /* ViewController.swift in Sources */,
 				C1831C052019CCCC00520122 /* AppDelegate.swift in Sources */,
-				C1831C172019CD7500520122 /* NetworkTools.swift in Sources */,
+				C1FB985020200E5F00DFD00D /* NetworkTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +366,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.liukun.AFNetWorking---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -382,7 +382,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.liukun.AFNetWorking---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

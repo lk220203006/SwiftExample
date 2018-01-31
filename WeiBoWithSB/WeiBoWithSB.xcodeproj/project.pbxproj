@@ -28,6 +28,11 @@
 		C1CBF393200357C70078218D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBF392200357C70078218D /* BaseViewController.swift */; };
 		C1CBF3952003599B0078218D /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBF3942003599B0078218D /* VisitorView.swift */; };
 		C1CBF397200359A90078218D /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CBF396200359A90078218D /* VisitorView.xib */; };
+		C1FB98602021911200DFD00D /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB985E2021911200DFD00D /* OAuthViewController.swift */; };
+		C1FB98612021911200DFD00D /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1FB985F2021911200DFD00D /* OAuthViewController.xib */; };
+		C1FB98632021950900DFD00D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB98622021950900DFD00D /* Common.swift */; };
+		C1FB98652021A29300DFD00D /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB98642021A29300DFD00D /* NetworkTools.swift */; };
+		C1FB98672021BD9800DFD00D /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB98662021BD9800DFD00D /* UserAccount.swift */; };
 		C1FD1C3F2015CFC200A431CE /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD1C3E2015CFC200A431CE /* UIBarButtonItem-Extension.swift */; };
 		C1FD1C412015D72B00A431CE /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD1C402015D72B00A431CE /* TitleButton.swift */; };
 		C1FD1CF22018549200A431CE /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD1CF02018549200A431CE /* PopoverViewController.swift */; };
@@ -60,6 +65,11 @@
 		C1CBF392200357C70078218D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C1CBF3942003599B0078218D /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		C1CBF396200359A90078218D /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		C1FB985E2021911200DFD00D /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		C1FB985F2021911200DFD00D /* OAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
+		C1FB98622021950900DFD00D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		C1FB98642021A29300DFD00D /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkTools.swift; path = "../../../../AFNetWorking的封装/AFNetWorking的封装/NetworkTools.swift"; sourceTree = "<group>"; };
+		C1FB98662021BD9800DFD00D /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		C1FD1C3E2015CFC200A431CE /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		C1FD1C402015D72B00A431CE /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		C1FD1CF02018549200A431CE /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +93,9 @@
 		04BAC7791FFD251500A00B5D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C1FB98642021A29300DFD00D /* NetworkTools.swift */,
+				C1FD1C402015D72B00A431CE /* TitleButton.swift */,
+				C1FB98622021950900DFD00D /* Common.swift */,
 				04BAC77A1FFD254800A00B5D /* Categary */,
 			);
 			path = Tools;
@@ -93,7 +106,6 @@
 			children = (
 				04BAC77B1FFD259800A00B5D /* UIButton-Extension.swift */,
 				C1FD1C3E2015CFC200A431CE /* UIBarButtonItem-Extension.swift */,
-				C1FD1C402015D72B00A431CE /* TitleButton.swift */,
 			);
 			path = Categary;
 			sourceTree = "<group>";
@@ -200,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				C14BFA061FF48FE1001B1110 /* MainViewController.swift */,
+				C1FB985D202190DC00DFD00D /* OAuth */,
 				C1CBF3912003574E0078218D /* Visitor */,
 				C14BFA071FF48FE1001B1110 /* Resource */,
 			);
@@ -223,6 +236,16 @@
 				C1CBF396200359A90078218D /* VisitorView.xib */,
 			);
 			path = Visitor;
+			sourceTree = "<group>";
+		};
+		C1FB985D202190DC00DFD00D /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				C1FB985E2021911200DFD00D /* OAuthViewController.swift */,
+				C1FB985F2021911200DFD00D /* OAuthViewController.xib */,
+				C1FB98662021BD9800DFD00D /* UserAccount.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		C1FD1CEF2018546A00A431CE /* UIPopover */ = {
@@ -302,6 +325,7 @@
 				C1CBF397200359A90078218D /* VisitorView.xib in Resources */,
 				C14BFA111FF491DE001B1110 /* Home.storyboard in Resources */,
 				C14BFA181FF4924C001B1110 /* Profile.storyboard in Resources */,
+				C1FB98612021911200DFD00D /* OAuthViewController.xib in Resources */,
 				C14BF9F21FF48F49001B1110 /* Assets.xcassets in Resources */,
 				C14BFA0E1FF48FE1001B1110 /* MainVCSettings.json in Resources */,
 				C1FD1CF32018549200A431CE /* PopoverViewController.xib in Resources */,
@@ -363,9 +387,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeiBoWithSB/Pods-WeiBoWithSB-resources.sh",
+				"${PODS_ROOT}/Weibo_SDK/libWeiboSDK/WeiboSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,10 +406,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1FB98632021950900DFD00D /* Common.swift in Sources */,
+				C1FB98652021A29300DFD00D /* NetworkTools.swift in Sources */,
+				C1FB98672021BD9800DFD00D /* UserAccount.swift in Sources */,
 				C1FD1C3F2015CFC200A431CE /* UIBarButtonItem-Extension.swift in Sources */,
 				C14BFA0A1FF48FE1001B1110 /* DiscoverViewController.swift in Sources */,
 				04BAC77C1FFD259800A00B5D /* UIButton-Extension.swift in Sources */,
 				C14BF9EB1FF48F49001B1110 /* AppDelegate.swift in Sources */,
+				C1FB98602021911200DFD00D /* OAuthViewController.swift in Sources */,
 				C1FD1CF22018549200A431CE /* PopoverViewController.swift in Sources */,
 				C1FD1C412015D72B00A431CE /* TitleButton.swift in Sources */,
 				C14BFA0C1FF48FE1001B1110 /* ProfileViewController.swift in Sources */,

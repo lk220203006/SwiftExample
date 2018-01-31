@@ -10,4 +10,5 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'SnapKit'
 pod 'SVProgressHUD'
+pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git" 
 end

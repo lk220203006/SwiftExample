@@ -19,12 +19,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print(NetworkTools.shareInstance)
-        print(NetworkTools.shareInstance)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        NetworkTools.shareInstance.request(urlString: "http://httpbin.org", parameters: ["name":"why","age":18])
+        NetworkTools.shareInstance.request(methodType: .GET,urlString: "http://httpbin.org/get", parameters: ["name":"why" as AnyObject,"age":18 as AnyObject],finished: {(result,error)->() in
+            if error != nil{
+                print(error?.localizedDescription as Any)
+            }
+            else{
+                print(result!)
+            }
+        })
+        NetworkTools.shareInstance.request(methodType: .POST,urlString: "http://httpbin.org/post", parameters: ["name":"why" as AnyObject,"age":18 as AnyObject],finished:{(result,error)->() in
+            if error != nil{
+                print(error?.localizedDescription as Any)
+            }
+            else{
+                print(result!)
+            }
+        })
     }
 }
 
