@@ -31,7 +31,6 @@ extension OAuthViewController{
     
     private func loadPage(){
         //获取登录页面的url
-        
 
         let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(app_key)&response_type=code&redirect_uri=\(redirect_url)"
         guard let url = URL(string: urlString) else {
@@ -99,7 +98,32 @@ extension OAuthViewController{
             guard let accountDict = result else{
                 return
             }
+            print(accountDict)
             let account = UserAccount(dict:accountDict)
+            print(account)
+            self.loadUserInfo(account: account)
+        }
+    }
+    
+    private func loadUserInfo(account:UserAccount){
+        guard let accessToken = account.access_token else{
+            return
+        }
+        
+        guard let uid = account.uid else {
+            return
+        }
+        
+        NetworkTools.shareInstance.loadUserInfo(access_token: accessToken, uid: uid) { (result, error) in
+            if error != nil{
+                print(error!.localizedDescription)
+                return
+            }
+            guard let userInfoDict = result else{
+                return
+            }
+            account.screen_name = userInfoDict["screen_name"] as? String
+            account.avatar_large = userInfoDict["avatar_large"] as? String
             print(account)
         }
     }
