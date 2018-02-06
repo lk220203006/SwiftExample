@@ -30,6 +30,7 @@ extension NetworkTools{
         
         //成功回调
         let success = { (task: URLSessionDataTask, json: Any)->() in
+            print(json)
             finished(json as AnyObject,nil)
         }
         
@@ -65,6 +66,20 @@ extension NetworkTools{
         let parameters = ["access_token":access_token,"uid":uid]
         request(methodType: .GET, urlString: urlString, parameters: parameters as [String : AnyObject], finished: {(result,error) -> () in
             finished(result as? [String : AnyObject],error)
+        })
+    }
+}
+
+extension NetworkTools{
+    func loadStatuses(finished:@escaping (_ result:[[String:AnyObject]]?,_ error:Error?) -> ()) {
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let parameters = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!]
+        request(methodType: .GET, urlString: urlString, parameters: parameters as [String : AnyObject], finished: {(result,error) -> () in
+            guard let resultDict = result as? [String:AnyObject] else{
+                finished(nil,error)
+                return
+            }
+            finished(resultDict["statuses"] as? [[String : AnyObject]],error)
         })
     }
 }

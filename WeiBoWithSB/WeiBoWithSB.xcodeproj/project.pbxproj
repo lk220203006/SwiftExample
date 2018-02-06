@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		04BAC77C1FFD259800A00B5D /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC77B1FFD259800A00B5D /* UIButton-Extension.swift */; };
 		707EF7314766F56F4AE21D07 /* Pods_WeiBoWithSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983B7FF83100212107E9CDFD /* Pods_WeiBoWithSB.framework */; };
+		C145172120293E06005EBD35 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145172020293E06005EBD35 /* UserAccountViewModel.swift */; };
+		C145172720294328005EBD35 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145172520294328005EBD35 /* WelcomeViewController.swift */; };
+		C145172820294328005EBD35 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C145172620294328005EBD35 /* WelcomeViewController.xib */; };
 		C14BF9EB1FF48F49001B1110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14BF9EA1FF48F49001B1110 /* AppDelegate.swift */; };
 		C14BF9F01FF48F49001B1110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14BF9EE1FF48F49001B1110 /* Main.storyboard */; };
 		C14BF9F21FF48F49001B1110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C14BF9F11FF48F49001B1110 /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 		04BAC77B1FFD259800A00B5D /* UIButton-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		900E8E7D3CD4DEF9D505C327 /* Pods-WeiBoWithSB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoWithSB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoWithSB/Pods-WeiBoWithSB.debug.xcconfig"; sourceTree = "<group>"; };
 		983B7FF83100212107E9CDFD /* Pods_WeiBoWithSB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoWithSB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C145172020293E06005EBD35 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		C145172520294328005EBD35 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		C145172620294328005EBD35 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		C14BF9E71FF48F49001B1110 /* WeiBoWithSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBoWithSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14BF9EA1FF48F49001B1110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C14BF9EF1FF48F49001B1110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +131,15 @@
 				983B7FF83100212107E9CDFD /* Pods_WeiBoWithSB.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1451722202942D9005EBD35 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				C145172520294328005EBD35 /* WelcomeViewController.swift */,
+				C145172620294328005EBD35 /* WelcomeViewController.xib */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		C14BF9DE1FF48F49001B1110 = {
@@ -211,9 +226,10 @@
 		C14BFA051FF48FE1001B1110 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C1451722202942D9005EBD35 /* Welcome */,
 				C14BFA061FF48FE1001B1110 /* MainViewController.swift */,
-				C1FB985D202190DC00DFD00D /* OAuth */,
 				C1CBF3912003574E0078218D /* Visitor */,
+				C1FB985D202190DC00DFD00D /* OAuth */,
 				C14BFA071FF48FE1001B1110 /* Resource */,
 			);
 			path = Main;
@@ -244,6 +260,7 @@
 				C1FB985E2021911200DFD00D /* OAuthViewController.swift */,
 				C1FB985F2021911200DFD00D /* OAuthViewController.xib */,
 				C1FB98662021BD9800DFD00D /* UserAccount.swift */,
+				C145172020293E06005EBD35 /* UserAccountViewModel.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -324,6 +341,7 @@
 				C14BF9F51FF48F49001B1110 /* LaunchScreen.storyboard in Resources */,
 				C1CBF397200359A90078218D /* VisitorView.xib in Resources */,
 				C14BFA111FF491DE001B1110 /* Home.storyboard in Resources */,
+				C145172820294328005EBD35 /* WelcomeViewController.xib in Resources */,
 				C14BFA181FF4924C001B1110 /* Profile.storyboard in Resources */,
 				C1FB98612021911200DFD00D /* OAuthViewController.xib in Resources */,
 				C14BF9F21FF48F49001B1110 /* Assets.xcassets in Resources */,
@@ -407,10 +425,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1FB98632021950900DFD00D /* Common.swift in Sources */,
+				C145172720294328005EBD35 /* WelcomeViewController.swift in Sources */,
 				C1FB98652021A29300DFD00D /* NetworkTools.swift in Sources */,
 				C1FB98672021BD9800DFD00D /* UserAccount.swift in Sources */,
 				C1FD1C3F2015CFC200A431CE /* UIBarButtonItem-Extension.swift in Sources */,
 				C14BFA0A1FF48FE1001B1110 /* DiscoverViewController.swift in Sources */,
+				C145172120293E06005EBD35 /* UserAccountViewModel.swift in Sources */,
 				04BAC77C1FFD259800A00B5D /* UIButton-Extension.swift in Sources */,
 				C14BF9EB1FF48F49001B1110 /* AppDelegate.swift in Sources */,
 				C1FB98602021911200DFD00D /* OAuthViewController.swift in Sources */,

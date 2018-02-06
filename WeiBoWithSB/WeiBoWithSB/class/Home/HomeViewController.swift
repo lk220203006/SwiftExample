@@ -27,6 +27,7 @@ class HomeViewController: BaseViewController {
         }
         
         setupNavigationBar()
+        loadStatuses()
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,7 +115,7 @@ extension HomeViewController{
         navigationItem.titleView = titleBtn
     }
 }
-
+// MARK:- 事件监听
 extension HomeViewController{
     @objc private func titleBtnClick(_ sender:TitleButton){
         //创建弹出的控制器
@@ -129,4 +130,21 @@ extension HomeViewController{
     }
 }
 
-
+// MARK:- 请求数据
+extension HomeViewController{
+    private func loadStatuses(){
+        NetworkTools.shareInstance.loadStatuses { (result, error) -> () in
+            if error != nil{
+                print(error as Any)
+                return
+            }
+            //获取可选类型中的数据
+            guard let resultArray = result else{
+                return
+            }
+            for statusDict in resultArray{
+                print(statusDict)
+            }
+        }
+    }
+}

@@ -100,7 +100,6 @@ extension OAuthViewController{
             }
             print(accountDict)
             let account = UserAccount(dict:accountDict)
-            print(account)
             self.loadUserInfo(account: account)
         }
     }
@@ -113,18 +112,30 @@ extension OAuthViewController{
         guard let uid = account.uid else {
             return
         }
-        
+        //发送网络请求
         NetworkTools.shareInstance.loadUserInfo(access_token: accessToken, uid: uid) { (result, error) in
             if error != nil{
                 print(error!.localizedDescription)
                 return
             }
+            //拿到用户信息的结果
             guard let userInfoDict = result else{
                 return
             }
+            //保存用户昵称和头像地址
             account.screen_name = userInfoDict["screen_name"] as? String
             account.avatar_large = userInfoDict["avatar_large"] as? String
-            print(account)
+            
+            //将account对象保存
+            NSKeyedArchiver.archiveRootObject(account, toFile: UserAccountViewModel.shareInstance.accountPath)
+            
+            //保存对象
+            UserAccountViewModel.shareInstance.account = account;
+            //退出当前控制器
+            //显示欢迎界面
+            self.dismiss(animated: false, completion: {() -> Void in
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController(nibName: "WelcomeViewController", bundle: nil)
+            })
         }
     }
 }
