@@ -18,6 +18,8 @@ class HomeViewController: BaseViewController {
         self?.titleBtn.isSelected = presented
     })
     
+    private lazy var statuses:[Status] = [Status]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,40 @@ class HomeViewController: BaseViewController {
         
         setupNavigationBar()
         loadStatuses()
+        
+        let createAtStr = "Fri Apr 08 11:16:29 +0800 2016"
+        //创建时间格式化对象
+        let fmt = DateFormatter()
+        fmt.dateFormat = "EEE MM dd HH:mm:ss Z yyyy"
+        fmt.locale = Locale(identifier: "en")
+        //将字符串时间转成date类型
+        guard let createDate = fmt.date(from: createAtStr) else {
+            return
+        }
+        //创建当前时间
+        let nowDate = Date()
+        //获取时间差
+        let interval = nowDate.timeIntervalSince(createDate)
+        //一分钟内
+        if interval < 60 {
+            print("刚刚")
+            return
+        }
+        //1小时前
+        if interval < 60 * 60 * 24{
+            print("\(interval/(60*60))小时前")
+            return
+        }
+        //昨天数据
+        let calendar = Calendar.current
+        if calendar.isDateInYesterday(createDate){
+            fmt.dateFormat = "昨天 HH:mm"
+            let timestr = fmt.string(from: createDate)
+            print(timestr)
+            return
+        }
+        //处理一年之内
+        let cmps = calendar.dateComponents(Set<>, from: createDate, to: nowDate)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,69 +75,20 @@ class HomeViewController: BaseViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return statuses.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath)
+        let status = statuses[indexPath.row]
+        cell.textLabel?.text = status.text
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 // MARK:- 设置UI界面
@@ -143,8 +130,15 @@ extension HomeViewController{
                 return
             }
             for statusDict in resultArray{
-                print(statusDict)
+                let status = Status(dict: statusDict)
+                self.statuses.append(status)
             }
+            //刷新表格
+            self.tableView.reloadData()
         }
     }
+}
+
+extension HomeViewController{
+    
 }

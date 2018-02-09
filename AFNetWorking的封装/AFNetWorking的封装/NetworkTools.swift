@@ -30,7 +30,7 @@ extension NetworkTools{
         
         //成功回调
         let success = { (task: URLSessionDataTask, json: Any)->() in
-            print(json)
+//            print(json)
             finished(json as AnyObject,nil)
         }
         

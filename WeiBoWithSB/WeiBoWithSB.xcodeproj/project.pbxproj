@@ -27,6 +27,7 @@
 		C14BFA161FF49239001B1110 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14BFA141FF49239001B1110 /* Discover.storyboard */; };
 		C14BFA181FF4924C001B1110 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14BFA171FF4924C001B1110 /* Profile.storyboard */; };
 		C14BFA1B1FF4950F001B1110 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14BFA191FF4950F001B1110 /* Null.storyboard */; };
+		C14D2782202A9AFF00F57584 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D2781202A9AFF00F57584 /* Status.swift */; };
 		C1831BF72019BE9B00520122 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1831BF62019BE9B00520122 /* PopoverAnimator.swift */; };
 		C1CBF393200357C70078218D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBF392200357C70078218D /* BaseViewController.swift */; };
 		C1CBF3952003599B0078218D /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBF3942003599B0078218D /* VisitorView.swift */; };
@@ -67,6 +68,7 @@
 		C14BFA151FF49239001B1110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WeiBoWithSB/Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		C14BFA171FF4924C001B1110 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C14BFA1A1FF4950F001B1110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WeiBoWithSB/Base.lproj/Null.storyboard; sourceTree = "<group>"; };
+		C14D2781202A9AFF00F57584 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		C1831BF62019BE9B00520122 /* PopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		C1CBF392200357C70078218D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C1CBF3942003599B0078218D /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		C14BF9FD1FF48FE1001B1110 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C14D2780202A9ADE00F57584 /* HomeModel */,
 				C14BFA0F1FF491DE001B1110 /* Home.storyboard */,
 				C14BF9FE1FF48FE1001B1110 /* HomeViewController.swift */,
 				C1FD1CEF2018546A00A431CE /* UIPopover */,
@@ -242,6 +245,14 @@
 				C14BFA081FF48FE1001B1110 /* MainVCSettings.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		C14D2780202A9ADE00F57584 /* HomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				C14D2781202A9AFF00F57584 /* Status.swift */,
+			);
+			path = HomeModel;
 			sourceTree = "<group>";
 		};
 		C1CBF3912003574E0078218D /* Visitor */ = {
@@ -426,6 +437,7 @@
 			files = (
 				C1FB98632021950900DFD00D /* Common.swift in Sources */,
 				C145172720294328005EBD35 /* WelcomeViewController.swift in Sources */,
+				C14D2782202A9AFF00F57584 /* Status.swift in Sources */,
 				C1FB98652021A29300DFD00D /* NetworkTools.swift in Sources */,
 				C1FB98672021BD9800DFD00D /* UserAccount.swift in Sources */,
 				C1FD1C3F2015CFC200A431CE /* UIBarButtonItem-Extension.swift in Sources */,

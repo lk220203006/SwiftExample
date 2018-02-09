@@ -16,15 +16,17 @@ class VisitorView: UIView {
     }
     
     // MARK: - 控件的属性
+    @IBOutlet weak var backView: UIImageView!
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     
     // MARK: - 自定义函数
-    func setupVisitorViewInfo(iconName:String, title:String) {
+    func setupVisitorViewInfo(iconName:String, title:String,backiconName:String) {
         iconView.image = UIImage(named: iconName)
         tipLabel.text = title;
+        backView.image = UIImage(named: backiconName)
     }
     
     func addRotationAnim(){
@@ -37,7 +39,7 @@ class VisitorView: UIView {
         rotationAnim.duration = 3
         rotationAnim.isRemovedOnCompletion = false
         //将动画添加到layer中
-        iconView.layer.add(rotationAnim, forKey: nil)
+        backView.layer.add(rotationAnim, forKey: nil)
     }
     
 }

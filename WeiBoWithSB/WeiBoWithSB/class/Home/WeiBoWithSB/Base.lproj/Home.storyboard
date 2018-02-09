@@ -17,6 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="181" id="MeP-Ft-onC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="181"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MeP-Ft-onC" id="Kc0-Qm-QfD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="mqE-pk-69J" id="DF2-Ez-P96"/>
                             <outlet property="delegate" destination="mqE-pk-69J" id="KrN-hP-lpJ"/>
@@ -26,7 +36,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9r-OP-daT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34" y="-323"/>
+            <point key="canvasLocation" x="32.799999999999997" y="-323.38830584707648"/>
         </scene>
         <!--首页-->
         <scene sceneID="hPN-YN-qlu">
