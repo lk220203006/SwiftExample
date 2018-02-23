@@ -30,40 +30,6 @@ class HomeViewController: BaseViewController {
         
         setupNavigationBar()
         loadStatuses()
-        
-        let createAtStr = "Fri Apr 08 11:16:29 +0800 2016"
-        //创建时间格式化对象
-        let fmt = DateFormatter()
-        fmt.dateFormat = "EEE MM dd HH:mm:ss Z yyyy"
-        fmt.locale = Locale(identifier: "en")
-        //将字符串时间转成date类型
-        guard let createDate = fmt.date(from: createAtStr) else {
-            return
-        }
-        //创建当前时间
-        let nowDate = Date()
-        //获取时间差
-        let interval = nowDate.timeIntervalSince(createDate)
-        //一分钟内
-        if interval < 60 {
-            print("刚刚")
-            return
-        }
-        //1小时前
-        if interval < 60 * 60 * 24{
-            print("\(interval/(60*60))小时前")
-            return
-        }
-        //昨天数据
-        let calendar = Calendar.current
-        if calendar.isDateInYesterday(createDate){
-            fmt.dateFormat = "昨天 HH:mm"
-            let timestr = fmt.string(from: createDate)
-            print(timestr)
-            return
-        }
-        //处理一年之内
-        let cmps = calendar.dateComponents(Set<>, from: createDate, to: nowDate)
     }
 
     override func didReceiveMemoryWarning() {

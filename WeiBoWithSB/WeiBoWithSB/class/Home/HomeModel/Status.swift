@@ -12,7 +12,14 @@ import UIKit
 
 class Status: NSObject {
     //MARK:- 属性
-    var created_at:String?
+    var created_at:String?{
+        didSet{
+            guard let created_at = created_at else{
+                return
+            }
+            createAtText = NSDate.createDateString(createAtStr: created_at)
+        }
+    }
     var source:String?{
         didSet{
             guard let source = source, source != "" else {
@@ -26,8 +33,11 @@ class Status: NSObject {
     var text:String?
     var mid:Int = 0
     
+    var user:[String:AnyObject]?
+    
     //MARK:- 对数据处理的属性
     var sourceText:String?
+    var createAtText:String?
     
     //MARK:- 自定义构造函数
     init(dict:[String:AnyObject]) {
