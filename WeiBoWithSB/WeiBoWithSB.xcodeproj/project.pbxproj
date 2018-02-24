@@ -11,6 +11,8 @@
 		707EF7314766F56F4AE21D07 /* Pods_WeiBoWithSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983B7FF83100212107E9CDFD /* Pods_WeiBoWithSB.framework */; };
 		C140258A203FEB8200A4B44B /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1402589203FEB8200A4B44B /* NSDate-Extension.swift */; };
 		C140258C203FEF3700A4B44B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140258B203FEF3700A4B44B /* User.swift */; };
+		C14025C320412A5900A4B44B /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14025C220412A5900A4B44B /* StatusViewModel.swift */; };
+		C14025C52041323800A4B44B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14025C42041323800A4B44B /* HomeViewCell.swift */; };
 		C145172120293E06005EBD35 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145172020293E06005EBD35 /* UserAccountViewModel.swift */; };
 		C145172720294328005EBD35 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145172520294328005EBD35 /* WelcomeViewController.swift */; };
 		C145172820294328005EBD35 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C145172620294328005EBD35 /* WelcomeViewController.xib */; };
@@ -52,6 +54,8 @@
 		983B7FF83100212107E9CDFD /* Pods_WeiBoWithSB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoWithSB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1402589203FEB8200A4B44B /* NSDate-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		C140258B203FEF3700A4B44B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C14025C220412A5900A4B44B /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		C14025C42041323800A4B44B /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		C145172020293E06005EBD35 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		C145172520294328005EBD35 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C145172620294328005EBD35 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -183,12 +187,12 @@
 		C14BF9FC1FF48FE1001B1110 /* class */ = {
 			isa = PBXGroup;
 			children = (
-				04BAC7791FFD251500A00B5D /* Tools */,
 				C14BFA051FF48FE1001B1110 /* Main */,
 				C14BF9FD1FF48FE1001B1110 /* Home */,
 				C14BF9FF1FF48FE1001B1110 /* Discover */,
 				C14BFA011FF48FE1001B1110 /* Message */,
 				C14BFA031FF48FE1001B1110 /* Profile */,
+				04BAC7791FFD251500A00B5D /* Tools */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -198,6 +202,7 @@
 			children = (
 				C14D2780202A9ADE00F57584 /* HomeModel */,
 				C14BFA0F1FF491DE001B1110 /* Home.storyboard */,
+				C14025C42041323800A4B44B /* HomeViewCell.swift */,
 				C14BF9FE1FF48FE1001B1110 /* HomeViewController.swift */,
 				C1FD1CEF2018546A00A431CE /* UIPopover */,
 			);
@@ -257,6 +262,7 @@
 			children = (
 				C14D2781202A9AFF00F57584 /* Status.swift */,
 				C140258B203FEF3700A4B44B /* User.swift */,
+				C14025C220412A5900A4B44B /* StatusViewModel.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -457,6 +463,8 @@
 				C1FD1C412015D72B00A431CE /* TitleButton.swift in Sources */,
 				C14BFA0C1FF48FE1001B1110 /* ProfileViewController.swift in Sources */,
 				C14BFA0D1FF48FE1001B1110 /* MainViewController.swift in Sources */,
+				C14025C320412A5900A4B44B /* StatusViewModel.swift in Sources */,
+				C14025C52041323800A4B44B /* HomeViewCell.swift in Sources */,
 				C1831BF72019BE9B00520122 /* PopoverAnimator.swift in Sources */,
 				C1CBF393200357C70078218D /* BaseViewController.swift in Sources */,
 				C1CBF3952003599B0078218D /* VisitorView.swift in Sources */,

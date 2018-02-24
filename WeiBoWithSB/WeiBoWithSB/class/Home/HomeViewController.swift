@@ -18,11 +18,13 @@ class HomeViewController: BaseViewController {
         self?.titleBtn.isSelected = presented
     })
     
-    private lazy var statuses:[Status] = [Status]()
+    private lazy var viewModels:[StatusViewModel] = [StatusViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.tableFooterView = UIView()
         visitorView.addRotationAnim()
         if !isLogin {
             return
@@ -46,13 +48,12 @@ class HomeViewController: BaseViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return statuses.count
+        return viewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath)
-        let status = statuses[indexPath.row]
-        cell.textLabel?.text = status.text
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeViewCell
+        cell.viewModel = viewModels[indexPath.row]
         return cell
     }
 }
@@ -97,7 +98,8 @@ extension HomeViewController{
             }
             for statusDict in resultArray{
                 let status = Status(dict: statusDict)
-                self.statuses.append(status)
+                let viewModel = StatusViewModel(status: status)
+                self.viewModels.append(viewModel)
             }
             //刷新表格
             self.tableView.reloadData()

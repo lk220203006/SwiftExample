@@ -12,37 +12,21 @@ import UIKit
 
 class Status: NSObject {
     //MARK:- 属性
-    var created_at:String?{
-        didSet{
-            guard let created_at = created_at else{
-                return
-            }
-            createAtText = NSDate.createDateString(createAtStr: created_at)
-        }
-    }
-    var source:String?{
-        didSet{
-            guard let source = source, source != "" else {
-                return
-            }
-            let startIndex = (source as NSString).range(of: ">").location
-            let length = (source as NSString).range(of: "</a>").location - startIndex
-            sourceText = (source as NSString).substring(with: NSRange(location: startIndex, length: length))
-        }
-    }
+    var created_at:String?
+    var source:String?
     var text:String?
     var mid:Int = 0
     
-    var user:[String:AnyObject]?
-    
-    //MARK:- 对数据处理的属性
-    var sourceText:String?
-    var createAtText:String?
+    var user:User?
     
     //MARK:- 自定义构造函数
     init(dict:[String:AnyObject]) {
         super.init()
         setValuesForKeys(dict)
+        
+        if let userDict = dict["user"] as? [String:AnyObject] {
+            user = User(dict: userDict)
+        }
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {

@@ -22,6 +22,10 @@ class WelcomeViewController: UIViewController {
         //??: 如果？？前面的可选类型为nil，那么直接使用？？后面的值
         let url = URL(string: profileURL ?? "")
         iconView.sd_setImage(with: url, placeholderImage: UIImage(named: "avatar_default_big"))
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         //改变约束
         iconViewBottomsCons.constant = UIScreen.main.bounds.size.height - 200
         //执行动画
@@ -33,5 +37,4 @@ class WelcomeViewController: UIViewController {
             UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         })
     }
-
 }

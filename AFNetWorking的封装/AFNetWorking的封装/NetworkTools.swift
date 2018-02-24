@@ -79,7 +79,6 @@ extension NetworkTools{
                 finished(nil,error)
                 return
             }
-            print(resultDict)
             finished(resultDict["statuses"] as? [[String : AnyObject]],error)
         })
     }
