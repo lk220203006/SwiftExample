@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = defaultViewController
         window?.makeKeyAndVisible()
+        
+        print((UserAccountViewModel.shareInstance.account?.access_token)!)
         return true
     }
 

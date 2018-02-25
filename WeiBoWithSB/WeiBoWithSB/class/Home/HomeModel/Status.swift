@@ -12,12 +12,12 @@ import UIKit
 
 class Status: NSObject {
     //MARK:- 属性
-    var created_at:String?
-    var source:String?
-    var text:String?
-    var mid:Int = 0
-    
-    var user:User?
+    var created_at:String?//微博创建时间
+    var source:String?//微博来源
+    var text:String?//微博正文
+    var mid:Int = 0//微博的id
+    var user:User?//微博对应的用户
+    var pic_urls:[[String:String]]?//微博的配图
     
     //MARK:- 自定义构造函数
     init(dict:[String:AnyObject]) {

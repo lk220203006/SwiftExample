@@ -22,7 +22,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 80
+        self.tableView.estimatedRowHeight = 180
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.tableFooterView = UIView()
         visitorView.addRotationAnim()
