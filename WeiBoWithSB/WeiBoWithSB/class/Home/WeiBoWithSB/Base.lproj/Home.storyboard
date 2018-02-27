@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="265" id="MeP-Ft-onC" customClass="HomeViewCell" customModule="WeiBoWithSB" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="265"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="206" id="MeP-Ft-onC" customClass="HomeViewCell" customModule="WeiBoWithSB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="206"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MeP-Ft-onC" id="Kc0-Qm-QfD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="206"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="vTU-fh-oJU">
@@ -72,9 +72,9 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ysm-5g-xRr">
-                                            <rect key="frame" x="15" y="156.5" width="345" height="58"/>
-                                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ysm-5g-xRr" customClass="PicCollectionView" customModule="WeiBoWithSB" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="98" width="345" height="58"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="345" id="NoC-aC-CdX"/>
                                                 <constraint firstAttribute="height" constant="58" id="r1J-9o-wZQ"/>
@@ -86,18 +86,32 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="S4A-bh-cZ7">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicCell" id="S4A-bh-cZ7" customClass="PickCollectionViewCell" customModule="WeiBoWithSB" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b2f-YR-O6P">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
                                                     </view>
+                                                    <constraints>
+                                                        <constraint firstItem="b2f-YR-O6P" firstAttribute="top" secondItem="S4A-bh-cZ7" secondAttribute="top" id="Wj5-yt-PFv"/>
+                                                        <constraint firstItem="b2f-YR-O6P" firstAttribute="leading" secondItem="S4A-bh-cZ7" secondAttribute="leading" id="bUC-eR-mNE"/>
+                                                        <constraint firstAttribute="bottom" secondItem="b2f-YR-O6P" secondAttribute="bottom" id="lsm-ik-TQI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="b2f-YR-O6P" secondAttribute="trailing" id="wEM-BK-rwc"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="iconView" destination="b2f-YR-O6P" id="JaD-TI-XkX"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Mf-OB-Yas">
-                                            <rect key="frame" x="0.0" y="224.5" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="166" width="375" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SI-76-eYV">
                                                     <rect key="frame" x="0.0" y="1" width="125" height="32"/>
@@ -197,6 +211,7 @@
                                 <connections>
                                     <outlet property="contentLabel" destination="paV-gG-hek" id="FnG-Tz-hlJ"/>
                                     <outlet property="iconView" destination="vTU-fh-oJU" id="QP6-jR-bnv"/>
+                                    <outlet property="picView" destination="ysm-5g-xRr" id="I4l-18-zsp"/>
                                     <outlet property="picViewHCons" destination="r1J-9o-wZQ" id="Zs3-Su-0ud"/>
                                     <outlet property="picViewWCons" destination="NoC-aC-CdX" id="fd4-UI-HOj"/>
                                     <outlet property="screenNameLabel" destination="LmQ-ig-kaj" id="jLz-s5-Tpg"/>

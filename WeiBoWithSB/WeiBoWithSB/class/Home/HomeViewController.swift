@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreGraphics
+import SDWebImage
 
 class HomeViewController: BaseViewController {
     
@@ -96,12 +97,34 @@ extension HomeViewController{
             guard let resultArray = result else{
                 return
             }
+            //遍历微博对应的字典
             for statusDict in resultArray{
                 let status = Status(dict: statusDict)
                 let viewModel = StatusViewModel(status: status)
                 self.viewModels.append(viewModel)
             }
+            //缓存图片
+            self.cacheImages(viewModels: self.viewModels)
             //刷新表格
+//            self.tableView.reloadData()
+        }
+    }
+    
+    private func cacheImages(viewModels:[StatusViewModel]){
+        //创建group
+        let group = DispatchGroup()
+        
+        
+        //缓存图片
+        for viewmodel in viewModels {
+            for picURL in viewmodel.picURLs{
+                group.enter()
+                SDWebImageManager.shared().loadImage(with: picURL, options: [], progress: nil, completed: { (_, _, _, _, _, _) in
+                    group.leave()
+                })
+            }
+        }
+        group.notify(queue: DispatchQueue.main) {
             self.tableView.reloadData()
         }
     }

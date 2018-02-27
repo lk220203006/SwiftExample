@@ -13,6 +13,7 @@
 		C140258C203FEF3700A4B44B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140258B203FEF3700A4B44B /* User.swift */; };
 		C14025C320412A5900A4B44B /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14025C220412A5900A4B44B /* StatusViewModel.swift */; };
 		C14025C52041323800A4B44B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14025C42041323800A4B44B /* HomeViewCell.swift */; };
+		C140263C2044FB9300A4B44B /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140263B2044FB9300A4B44B /* PicCollectionView.swift */; };
 		C145172120293E06005EBD35 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145172020293E06005EBD35 /* UserAccountViewModel.swift */; };
 		C145172720294328005EBD35 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145172520294328005EBD35 /* WelcomeViewController.swift */; };
 		C145172820294328005EBD35 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C145172620294328005EBD35 /* WelcomeViewController.xib */; };
@@ -56,6 +57,7 @@
 		C140258B203FEF3700A4B44B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C14025C220412A5900A4B44B /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		C14025C42041323800A4B44B /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		C140263B2044FB9300A4B44B /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		C145172020293E06005EBD35 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		C145172520294328005EBD35 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C145172620294328005EBD35 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				C14D2780202A9ADE00F57584 /* HomeModel */,
 				C14BFA0F1FF491DE001B1110 /* Home.storyboard */,
 				C14025C42041323800A4B44B /* HomeViewCell.swift */,
+				C140263B2044FB9300A4B44B /* PicCollectionView.swift */,
 				C14BF9FE1FF48FE1001B1110 /* HomeViewController.swift */,
 				C1FD1CEF2018546A00A431CE /* UIPopover */,
 			);
@@ -466,6 +469,7 @@
 				C14025C320412A5900A4B44B /* StatusViewModel.swift in Sources */,
 				C14025C52041323800A4B44B /* HomeViewCell.swift in Sources */,
 				C1831BF72019BE9B00520122 /* PopoverAnimator.swift in Sources */,
+				C140263C2044FB9300A4B44B /* PicCollectionView.swift in Sources */,
 				C1CBF393200357C70078218D /* BaseViewController.swift in Sources */,
 				C1CBF3952003599B0078218D /* VisitorView.swift in Sources */,
 				C14BFA0B1FF48FE1001B1110 /* MessageViewController.swift in Sources */,
