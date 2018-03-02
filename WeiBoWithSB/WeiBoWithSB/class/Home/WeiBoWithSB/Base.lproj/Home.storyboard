@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="206" id="MeP-Ft-onC" customClass="HomeViewCell" customModule="WeiBoWithSB" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="206"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="255" id="MeP-Ft-onC" customClass="HomeViewCell" customModule="WeiBoWithSB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MeP-Ft-onC" id="Kc0-Qm-QfD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="206"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="vTU-fh-oJU">
@@ -66,14 +66,20 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="今天天气不错" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paV-gG-hek">
-                                            <rect key="frame" x="15" y="65" width="345" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="今天天气不错" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paV-gG-hek">
+                                            <rect key="frame" x="15" y="65" width="345" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转发" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAI-wJ-Scl">
+                                            <rect key="frame" x="15" y="97" width="345" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ysm-5g-xRr" customClass="PicCollectionView" customModule="WeiBoWithSB" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="98" width="345" height="58"/>
+                                            <rect key="frame" x="15" y="147" width="345" height="58"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="345" id="NoC-aC-CdX"/>
@@ -111,7 +117,7 @@
                                             </cells>
                                         </collectionView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Mf-OB-Yas">
-                                            <rect key="frame" x="0.0" y="166" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="215" width="375" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SI-76-eYV">
                                                     <rect key="frame" x="0.0" y="1" width="125" height="32"/>
@@ -189,13 +195,15 @@
                                         <constraint firstItem="LmQ-ig-kaj" firstAttribute="top" secondItem="vTU-fh-oJU" secondAttribute="top" id="8QM-ZJ-sE5"/>
                                         <constraint firstItem="wlI-Er-9rq" firstAttribute="centerY" secondItem="LmQ-ig-kaj" secondAttribute="centerY" id="8sW-jz-d3K"/>
                                         <constraint firstItem="vTU-fh-oJU" firstAttribute="top" secondItem="Kc0-Qm-QfD" secondAttribute="top" constant="10" id="ALI-Dp-Xph"/>
+                                        <constraint firstItem="ysm-5g-xRr" firstAttribute="top" secondItem="rAI-wJ-Scl" secondAttribute="bottom" constant="10" id="E4r-Kc-qyq"/>
                                         <constraint firstItem="vTU-fh-oJU" firstAttribute="leading" secondItem="Kc0-Qm-QfD" secondAttribute="leading" constant="15" id="GHD-R1-Ufi"/>
-                                        <constraint firstItem="ysm-5g-xRr" firstAttribute="top" secondItem="paV-gG-hek" secondAttribute="bottom" constant="10" id="ID8-Ta-G3h"/>
                                         <constraint firstItem="LmQ-ig-kaj" firstAttribute="leading" secondItem="vTU-fh-oJU" secondAttribute="trailing" constant="15" id="KbB-BG-JxS"/>
+                                        <constraint firstItem="rAI-wJ-Scl" firstAttribute="leading" secondItem="Kc0-Qm-QfD" secondAttribute="leading" constant="15" id="L8P-P1-KbP"/>
                                         <constraint firstAttribute="trailing" secondItem="2Mf-OB-Yas" secondAttribute="trailing" id="RcC-xQ-MQI"/>
                                         <constraint firstItem="s5W-YD-hqG" firstAttribute="centerY" secondItem="UwZ-Kh-0D6" secondAttribute="centerY" id="Rl7-On-WfI"/>
                                         <constraint firstItem="wlI-Er-9rq" firstAttribute="leading" secondItem="LmQ-ig-kaj" secondAttribute="trailing" constant="5" id="TaB-nd-T3o"/>
                                         <constraint firstAttribute="bottom" secondItem="2Mf-OB-Yas" secondAttribute="bottom" id="WPd-Iz-L80"/>
+                                        <constraint firstAttribute="trailing" secondItem="rAI-wJ-Scl" secondAttribute="trailing" constant="15" id="Yze-59-iG7"/>
                                         <constraint firstItem="ysm-5g-xRr" firstAttribute="leading" secondItem="Kc0-Qm-QfD" secondAttribute="leading" constant="15" id="ari-Tg-IqG"/>
                                         <constraint firstItem="QPb-QQ-ubE" firstAttribute="bottom" secondItem="vTU-fh-oJU" secondAttribute="bottom" id="b5r-2r-gqA"/>
                                         <constraint firstItem="QPb-QQ-ubE" firstAttribute="trailing" secondItem="vTU-fh-oJU" secondAttribute="trailing" id="hBh-SQ-wcK"/>
@@ -205,6 +213,7 @@
                                         <constraint firstItem="paV-gG-hek" firstAttribute="leading" secondItem="vTU-fh-oJU" secondAttribute="leading" id="qPo-JQ-IXJ"/>
                                         <constraint firstItem="UwZ-Kh-0D6" firstAttribute="bottom" secondItem="vTU-fh-oJU" secondAttribute="bottom" id="rbX-eF-5H2"/>
                                         <constraint firstItem="UwZ-Kh-0D6" firstAttribute="leading" secondItem="LmQ-ig-kaj" secondAttribute="leading" id="uZM-YQ-pbw"/>
+                                        <constraint firstItem="rAI-wJ-Scl" firstAttribute="top" secondItem="paV-gG-hek" secondAttribute="bottom" constant="15" id="uvg-q3-zPM"/>
                                         <constraint firstItem="2Mf-OB-Yas" firstAttribute="leading" secondItem="Kc0-Qm-QfD" secondAttribute="leading" id="vey-5v-JUU"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -214,6 +223,7 @@
                                     <outlet property="picView" destination="ysm-5g-xRr" id="I4l-18-zsp"/>
                                     <outlet property="picViewHCons" destination="r1J-9o-wZQ" id="Zs3-Su-0ud"/>
                                     <outlet property="picViewWCons" destination="NoC-aC-CdX" id="fd4-UI-HOj"/>
+                                    <outlet property="retweetedContentLabel" destination="rAI-wJ-Scl" id="EIE-xm-O2n"/>
                                     <outlet property="screenNameLabel" destination="LmQ-ig-kaj" id="jLz-s5-Tpg"/>
                                     <outlet property="sourceLabel" destination="s5W-YD-hqG" id="ihY-43-w6y"/>
                                     <outlet property="timeLabel" destination="UwZ-Kh-0D6" id="DII-SG-gig"/>
