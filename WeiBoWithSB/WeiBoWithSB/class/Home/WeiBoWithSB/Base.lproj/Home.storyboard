@@ -72,6 +72,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVZ-yf-xEN">
+                                            <rect key="frame" x="0.0" y="90" width="375" height="125"/>
+                                            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转发" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAI-wJ-Scl">
                                             <rect key="frame" x="15" y="97" width="345" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -195,6 +199,7 @@
                                         <constraint firstItem="LmQ-ig-kaj" firstAttribute="top" secondItem="vTU-fh-oJU" secondAttribute="top" id="8QM-ZJ-sE5"/>
                                         <constraint firstItem="wlI-Er-9rq" firstAttribute="centerY" secondItem="LmQ-ig-kaj" secondAttribute="centerY" id="8sW-jz-d3K"/>
                                         <constraint firstItem="vTU-fh-oJU" firstAttribute="top" secondItem="Kc0-Qm-QfD" secondAttribute="top" constant="10" id="ALI-Dp-Xph"/>
+                                        <constraint firstItem="qVZ-yf-xEN" firstAttribute="top" secondItem="paV-gG-hek" secondAttribute="bottom" constant="8" id="BfI-W8-oaH"/>
                                         <constraint firstItem="ysm-5g-xRr" firstAttribute="top" secondItem="rAI-wJ-Scl" secondAttribute="bottom" constant="10" id="E4r-Kc-qyq"/>
                                         <constraint firstItem="vTU-fh-oJU" firstAttribute="leading" secondItem="Kc0-Qm-QfD" secondAttribute="leading" constant="15" id="GHD-R1-Ufi"/>
                                         <constraint firstItem="LmQ-ig-kaj" firstAttribute="leading" secondItem="vTU-fh-oJU" secondAttribute="trailing" constant="15" id="KbB-BG-JxS"/>
@@ -203,15 +208,18 @@
                                         <constraint firstItem="s5W-YD-hqG" firstAttribute="centerY" secondItem="UwZ-Kh-0D6" secondAttribute="centerY" id="Rl7-On-WfI"/>
                                         <constraint firstItem="wlI-Er-9rq" firstAttribute="leading" secondItem="LmQ-ig-kaj" secondAttribute="trailing" constant="5" id="TaB-nd-T3o"/>
                                         <constraint firstAttribute="bottom" secondItem="2Mf-OB-Yas" secondAttribute="bottom" id="WPd-Iz-L80"/>
+                                        <constraint firstItem="qVZ-yf-xEN" firstAttribute="leading" secondItem="Kc0-Qm-QfD" secondAttribute="leading" id="YWw-oB-LIn"/>
                                         <constraint firstAttribute="trailing" secondItem="rAI-wJ-Scl" secondAttribute="trailing" constant="15" id="Yze-59-iG7"/>
                                         <constraint firstItem="ysm-5g-xRr" firstAttribute="leading" secondItem="Kc0-Qm-QfD" secondAttribute="leading" constant="15" id="ari-Tg-IqG"/>
                                         <constraint firstItem="QPb-QQ-ubE" firstAttribute="bottom" secondItem="vTU-fh-oJU" secondAttribute="bottom" id="b5r-2r-gqA"/>
+                                        <constraint firstAttribute="trailing" secondItem="qVZ-yf-xEN" secondAttribute="trailing" id="bbx-is-nDw"/>
                                         <constraint firstItem="QPb-QQ-ubE" firstAttribute="trailing" secondItem="vTU-fh-oJU" secondAttribute="trailing" id="hBh-SQ-wcK"/>
                                         <constraint firstAttribute="trailing" secondItem="paV-gG-hek" secondAttribute="trailing" constant="15" id="iHG-Nj-vuN"/>
                                         <constraint firstItem="2Mf-OB-Yas" firstAttribute="top" secondItem="ysm-5g-xRr" secondAttribute="bottom" priority="700" constant="10" id="ka3-jw-d16"/>
                                         <constraint firstItem="s5W-YD-hqG" firstAttribute="leading" secondItem="UwZ-Kh-0D6" secondAttribute="trailing" constant="5" id="ohV-yk-c7J"/>
                                         <constraint firstItem="paV-gG-hek" firstAttribute="leading" secondItem="vTU-fh-oJU" secondAttribute="leading" id="qPo-JQ-IXJ"/>
                                         <constraint firstItem="UwZ-Kh-0D6" firstAttribute="bottom" secondItem="vTU-fh-oJU" secondAttribute="bottom" id="rbX-eF-5H2"/>
+                                        <constraint firstItem="2Mf-OB-Yas" firstAttribute="top" secondItem="qVZ-yf-xEN" secondAttribute="bottom" id="uXF-H6-V4V"/>
                                         <constraint firstItem="UwZ-Kh-0D6" firstAttribute="leading" secondItem="LmQ-ig-kaj" secondAttribute="leading" id="uZM-YQ-pbw"/>
                                         <constraint firstItem="rAI-wJ-Scl" firstAttribute="top" secondItem="paV-gG-hek" secondAttribute="bottom" constant="15" id="uvg-q3-zPM"/>
                                         <constraint firstItem="2Mf-OB-Yas" firstAttribute="leading" secondItem="Kc0-Qm-QfD" secondAttribute="leading" id="vey-5v-JUU"/>
@@ -221,9 +229,12 @@
                                     <outlet property="contentLabel" destination="paV-gG-hek" id="FnG-Tz-hlJ"/>
                                     <outlet property="iconView" destination="vTU-fh-oJU" id="QP6-jR-bnv"/>
                                     <outlet property="picView" destination="ysm-5g-xRr" id="I4l-18-zsp"/>
+                                    <outlet property="picViewBottomCons" destination="ka3-jw-d16" id="odn-Pm-u62"/>
                                     <outlet property="picViewHCons" destination="r1J-9o-wZQ" id="Zs3-Su-0ud"/>
                                     <outlet property="picViewWCons" destination="NoC-aC-CdX" id="fd4-UI-HOj"/>
+                                    <outlet property="retweetedBgView" destination="qVZ-yf-xEN" id="LIM-m9-tck"/>
                                     <outlet property="retweetedContentLabel" destination="rAI-wJ-Scl" id="EIE-xm-O2n"/>
+                                    <outlet property="retweetedContentLabelTopCons" destination="uvg-q3-zPM" id="UKv-qo-RoY"/>
                                     <outlet property="screenNameLabel" destination="LmQ-ig-kaj" id="jLz-s5-Tpg"/>
                                     <outlet property="sourceLabel" destination="s5W-YD-hqG" id="ihY-43-w6y"/>
                                     <outlet property="timeLabel" destination="UwZ-Kh-0D6" id="DII-SG-gig"/>

@@ -9,6 +9,7 @@
 import UIKit
 import CoreGraphics
 import SDWebImage
+import MJRefresh
 
 class HomeViewController: BaseViewController {
     
@@ -30,9 +31,8 @@ class HomeViewController: BaseViewController {
         if !isLogin {
             return
         }
-        
         setupNavigationBar()
-        loadStatuses()
+        setupHeaderView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +57,10 @@ class HomeViewController: BaseViewController {
         cell.viewModel = viewModels[indexPath.row]
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//    }
 }
 
 // MARK:- 设置UI界面
@@ -68,6 +72,17 @@ extension HomeViewController{
         titleBtn.setTitle("coderwhy", for: .normal)
         titleBtn.addTarget(self, action: #selector(titleBtnClick(_:)), for: .touchUpInside)
         navigationItem.titleView = titleBtn
+    }
+    
+    private func setupHeaderView(){
+        let header = MJRefreshNormalHeader {
+            self.loadNewStatuses()
+        }
+        header?.setTitle("下拉刷新", for: .idle)
+        header?.setTitle("释放刷新", for: .pulling)
+        header?.setTitle("加载中", for: .refreshing)
+        tableView.mj_header = header
+        tableView.mj_header.beginRefreshing()
     }
 }
 // MARK:- 事件监听
@@ -87,7 +102,16 @@ extension HomeViewController{
 
 // MARK:- 请求数据
 extension HomeViewController{
-    private func loadStatuses(){
+    //加载最新的数据
+    @objc private func loadNewStatuses(){
+        loadStatuses(isNewData: true)
+    }
+    private func loadStatuses(isNewData:Bool){
+        //获取sinceid
+        var since_id = 0;
+        if isNewData {
+            since_id = viewModels.first?.status?.mid ?? 0
+        }
         NetworkTools.shareInstance.loadStatuses { (result, error) -> () in
             if error != nil{
                 print(error as Any)
@@ -126,6 +150,7 @@ extension HomeViewController{
         }
         group.notify(queue: DispatchQueue.main) {
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
         }
     }
 }

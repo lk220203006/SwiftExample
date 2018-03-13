@@ -24,11 +24,14 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var picView: PicCollectionView!
     @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var retweetedBgView: UIView!
     
     //MARK:- 约束的属性
     @IBOutlet weak var picViewWCons: NSLayoutConstraint!
     @IBOutlet weak var picViewHCons: NSLayoutConstraint!
+    @IBOutlet weak var picViewBottomCons: NSLayoutConstraint!
     
+    @IBOutlet weak var retweetedContentLabelTopCons: NSLayoutConstraint!
     //MARK:- 自定义属性
     var viewModel:StatusViewModel?{
         didSet{
@@ -62,10 +65,14 @@ class HomeViewCell: UITableViewCell {
                 if let screenName = viewModel.status?.retweeted_status?.user?.screen_name,
                     let retweetedText = viewModel.status?.retweeted_status?.text{
                     retweetedContentLabel.text = "@" + screenName + ":" + retweetedText
+                    retweetedContentLabelTopCons.constant = 15;
                 }
+                retweetedBgView.isHidden = false
             }
             else{
                 retweetedContentLabel.text = nil
+                retweetedContentLabelTopCons.constant = 0;
+                retweetedBgView.isHidden = true
             }
         }
     }
@@ -94,8 +101,10 @@ extension HomeViewCell{
         
         //没有配图
         if count == 0 {
+            picViewBottomCons.constant = 0;
             return CGSize.zero
         }
+        picViewBottomCons.constant = 10;
         //计算出来imageviewwh
         let imageViewWH = (UIScreen.main.bounds.width - 2*edgeMargin-2*itemMaigin)/3
         //取出图片
