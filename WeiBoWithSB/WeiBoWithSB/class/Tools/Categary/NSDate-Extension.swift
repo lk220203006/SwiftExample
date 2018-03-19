@@ -10,7 +10,7 @@ import Foundation
 
 extension NSDate{
     class func createDateString(createAtStr:String) -> String {
-        let createAtStr = "Fri Feb 23 11:16:29 +0800 2018"
+        let createAtStr = createAtStr
         //创建时间格式化对象
         let fmt = DateFormatter()
         fmt.dateFormat = "EEE MM dd HH:mm:ss Z yyyy"
@@ -29,7 +29,7 @@ extension NSDate{
         }
         //1小时前
         if interval < 60 * 60 * 24{
-            return "\(interval/(60*60))小时前"
+            return "\(Int(ceil(interval/(60*60))))小时前"
             
         }
         //昨天数据

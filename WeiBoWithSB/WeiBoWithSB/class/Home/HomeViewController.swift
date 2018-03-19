@@ -84,6 +84,13 @@ extension HomeViewController{
         tableView.mj_header = header
         tableView.mj_header.beginRefreshing()
     }
+    
+    private func setupFooterView(){
+        let footer = MJRefreshAutoFooter {
+            self.loadMoreStatuses()
+        }
+        tableView.mj_footer = footer
+    }
 }
 // MARK:- 事件监听
 extension HomeViewController{
@@ -106,13 +113,19 @@ extension HomeViewController{
     @objc private func loadNewStatuses(){
         loadStatuses(isNewData: true)
     }
+    @objc private func loadMoreStatuses(){
+        loadStatuses(isNewData: false)
+    }
     private func loadStatuses(isNewData:Bool){
         //获取sinceid
         var since_id = 0;
         if isNewData {
             since_id = viewModels.first?.status?.mid ?? 0
         }
-        NetworkTools.shareInstance.loadStatuses { (result, error) -> () in
+        else{
+            since_id = viewModels.last?.status?.mid ?? 0
+        }
+        NetworkTools.shareInstance.loadStatuses(since_id: since_id, finished: { (result, error) -> () in
             if error != nil{
                 print(error as Any)
                 return
@@ -131,7 +144,7 @@ extension HomeViewController{
             self.cacheImages(viewModels: self.viewModels)
             //刷新表格
 //            self.tableView.reloadData()
-        }
+        })
     }
     
     private func cacheImages(viewModels:[StatusViewModel]){

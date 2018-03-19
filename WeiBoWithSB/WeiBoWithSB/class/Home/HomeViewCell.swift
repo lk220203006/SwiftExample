@@ -81,9 +81,9 @@ class HomeViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         //取出picview的布局
-        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
-        let imageViewWH = (UIScreen.main.bounds.width - 2*edgeMargin-2*itemMaigin)/3
-        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
+//        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
+//        let imageViewWH = (UIScreen.main.bounds.width - 2*edgeMargin-2*itemMaigin)/3
+//        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

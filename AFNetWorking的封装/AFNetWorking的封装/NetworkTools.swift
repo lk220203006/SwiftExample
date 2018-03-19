@@ -73,7 +73,7 @@ extension NetworkTools{
 extension NetworkTools{
     func loadStatuses(since_id:Int,finished:@escaping (_ result:[[String:AnyObject]]?,_ error:Error?) -> ()) {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let parameters = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!,"since_id":since_id]
+        let parameters = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!,"since_id":since_id] as [String : Any]
         request(methodType: .GET, urlString: urlString, parameters: parameters as [String : AnyObject], finished: {(result,error) -> () in
             guard let resultDict = result as? [String:AnyObject] else{
                 finished(nil,error)
