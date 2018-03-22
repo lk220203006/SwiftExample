@@ -49,7 +49,12 @@ class HomeViewCell: UITableViewCell {
             //时间
             timeLabel.text = viewModel.createAtText
             //来源
-            sourceLabel.text = viewModel.sourceText
+            if let sourceText = viewModel.sourceText {
+                sourceLabel.text = "来自 " + sourceText
+            }
+            else{
+                sourceLabel.text = nil
+            }
             //设置正文
             contentLabel.text = viewModel.status?.text
             //设置昵称的文字颜色

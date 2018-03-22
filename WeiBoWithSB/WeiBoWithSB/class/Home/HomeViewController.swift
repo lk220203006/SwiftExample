@@ -21,18 +21,29 @@ class HomeViewController: BaseViewController {
     })
     
     private lazy var viewModels:[StatusViewModel] = [StatusViewModel]()
+    private lazy var tipLabel:UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 180
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.tableFooterView = UIView()
+        //没有登录时设置的内容
         visitorView.addRotationAnim()
         if !isLogin {
             return
         }
+        //设置导航栏的内容
         setupNavigationBar()
+        
+        //设置估算高度
+        self.tableView.estimatedRowHeight = 180
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.tableFooterView = UIView()
+        
+        //布局header
         setupHeaderView()
+        setupFooterView()
+        
+        //设置提示的label
+        setupTipLabel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,10 +97,20 @@ extension HomeViewController{
     }
     
     private func setupFooterView(){
-        let footer = MJRefreshAutoFooter {
+        let footer = MJRefreshBackNormalFooter {
             self.loadMoreStatuses()
         }
         tableView.mj_footer = footer
+    }
+    
+    private func setupTipLabel(){
+        navigationController?.navigationBar.insertSubview(tipLabel, at: 0)
+        tipLabel.frame = CGRect(x: 0, y: 10, width: UIScreen.main.bounds.width, height: 32)
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.textColor = UIColor.white
+        tipLabel.font = UIFont.systemFont(ofSize: 14)
+        tipLabel.textAlignment = .center
+        tipLabel.isHidden = true
     }
 }
 // MARK:- 事件监听
@@ -119,13 +140,15 @@ extension HomeViewController{
     private func loadStatuses(isNewData:Bool){
         //获取sinceid
         var since_id = 0;
+        var max_id = 0
         if isNewData {
             since_id = viewModels.first?.status?.mid ?? 0
         }
         else{
-            since_id = viewModels.last?.status?.mid ?? 0
+            max_id = viewModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id-1)
         }
-        NetworkTools.shareInstance.loadStatuses(since_id: since_id, finished: { (result, error) -> () in
+        NetworkTools.shareInstance.loadStatuses(since_id: since_id,max_id: max_id, finished: { (result, error) -> () in
             if error != nil{
                 print(error as Any)
                 return
@@ -135,13 +158,20 @@ extension HomeViewController{
                 return
             }
             //遍历微博对应的字典
+            var tempViewMdel = [StatusViewModel]()
             for statusDict in resultArray{
                 let status = Status(dict: statusDict)
                 let viewModel = StatusViewModel(status: status)
-                self.viewModels.append(viewModel)
+                tempViewMdel.append(viewModel)
+            }
+            if (isNewData){
+                self.viewModels = tempViewMdel + self.viewModels
+            }
+            else{
+                self.viewModels = self.viewModels + tempViewMdel
             }
             //缓存图片
-            self.cacheImages(viewModels: self.viewModels)
+            self.cacheImages(viewModels: tempViewMdel)
             //刷新表格
 //            self.tableView.reloadData()
         })
@@ -164,7 +194,23 @@ extension HomeViewController{
         group.notify(queue: DispatchQueue.main) {
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
+            self.showTipLabel(count: viewModels.count)
         }
+    }
+    
+    private func showTipLabel(count:Int){
+        tipLabel.isHidden = false
+        tipLabel.text = count == 0 ? "没有新数据":"\(count)条微博"
+        UIView.animate(withDuration: 1.0, animations: {
+            self.tipLabel.frame.origin.y = 44
+        }, completion: { (_) -> Void in
+            UIView.animate(withDuration: 1.0, delay: 1.5, options: [], animations: {
+                self.tipLabel.frame.origin.y = 0
+            }, completion: { (_) -> Void in
+                self.tipLabel.isHidden = true
+            })
+        })
     }
 }
 

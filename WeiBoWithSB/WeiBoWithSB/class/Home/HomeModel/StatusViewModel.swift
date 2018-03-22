@@ -29,7 +29,7 @@ class StatusViewModel: NSObject {
         if let source = status.source, source != ""{
             let startIndex = (source as NSString).range(of: ">").location + 1
             let length = (source as NSString).range(of: "</a>").location - startIndex
-            sourceText = "来自:\((source as NSString).substring(with: NSRange(location: startIndex, length: length)))"
+            sourceText = (source as NSString).substring(with: NSRange(location: startIndex, length: length))
         }
         
         //处理时间
