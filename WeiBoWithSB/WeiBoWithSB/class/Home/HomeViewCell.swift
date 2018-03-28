@@ -133,8 +133,8 @@ extension HomeViewCell{
         
         //四张配图
         if count == 4 {
-            let picViewWH = imageViewWH * 2 + itemMaigin
-            return CGSize(width: picViewWH, height: picViewWH*2)
+            let picViewWH = imageViewWH * 2 + itemMaigin*2
+            return CGSize(width: picViewWH, height: picViewWH)
         }
         //其它张配图
         //计算行数

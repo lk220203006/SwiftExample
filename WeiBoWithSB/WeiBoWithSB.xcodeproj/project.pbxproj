@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		04BAC77C1FFD259800A00B5D /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAC77B1FFD259800A00B5D /* UIButton-Extension.swift */; };
 		707EF7314766F56F4AE21D07 /* Pods_WeiBoWithSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983B7FF83100212107E9CDFD /* Pods_WeiBoWithSB.framework */; };
+		C1140A5C206B23F5004F23FB /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1140A5A206B23F5004F23FB /* ComposeViewController.swift */; };
+		C1140A5D206B23F5004F23FB /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1140A5B206B23F5004F23FB /* ComposeViewController.xib */; };
+		C1140A5F206B37F6004F23FB /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1140A5E206B37F6004F23FB /* ComposeTitleView.swift */; };
+		C1140A61206B3D21004F23FB /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1140A60206B3D21004F23FB /* ComposeTextView.swift */; };
 		C140258A203FEB8200A4B44B /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1402589203FEB8200A4B44B /* NSDate-Extension.swift */; };
 		C140258C203FEF3700A4B44B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140258B203FEF3700A4B44B /* User.swift */; };
 		C14025C320412A5900A4B44B /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14025C220412A5900A4B44B /* StatusViewModel.swift */; };
@@ -53,6 +57,10 @@
 		04BAC77B1FFD259800A00B5D /* UIButton-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		900E8E7D3CD4DEF9D505C327 /* Pods-WeiBoWithSB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoWithSB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoWithSB/Pods-WeiBoWithSB.debug.xcconfig"; sourceTree = "<group>"; };
 		983B7FF83100212107E9CDFD /* Pods_WeiBoWithSB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoWithSB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1140A5A206B23F5004F23FB /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		C1140A5B206B23F5004F23FB /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		C1140A5E206B37F6004F23FB /* ComposeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
+		C1140A60206B3D21004F23FB /* ComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		C1402589203FEB8200A4B44B /* NSDate-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		C140258B203FEF3700A4B44B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C14025C220412A5900A4B44B /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
@@ -146,6 +154,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C1140A59206B23CE004F23FB /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				C1140A5E206B37F6004F23FB /* ComposeTitleView.swift */,
+				C1140A60206B3D21004F23FB /* ComposeTextView.swift */,
+				C1140A5A206B23F5004F23FB /* ComposeViewController.swift */,
+				C1140A5B206B23F5004F23FB /* ComposeViewController.xib */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
 		C1451722202942D9005EBD35 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +208,7 @@
 		C14BF9FC1FF48FE1001B1110 /* class */ = {
 			isa = PBXGroup;
 			children = (
+				C1140A59206B23CE004F23FB /* Compose */,
 				C14BFA051FF48FE1001B1110 /* Main */,
 				C14BF9FD1FF48FE1001B1110 /* Home */,
 				C14BF9FF1FF48FE1001B1110 /* Discover */,
@@ -375,6 +395,7 @@
 				C1FD1CF32018549200A431CE /* PopoverViewController.xib in Resources */,
 				C14BFA1B1FF4950F001B1110 /* Null.storyboard in Resources */,
 				C14BFA131FF49223001B1110 /* Message.storyboard in Resources */,
+				C1140A5D206B23F5004F23FB /* ComposeViewController.xib in Resources */,
 				C14BFA161FF49239001B1110 /* Discover.storyboard in Resources */,
 				C14BF9F01FF48F49001B1110 /* Main.storyboard in Resources */,
 			);
@@ -456,16 +477,19 @@
 				C145172720294328005EBD35 /* WelcomeViewController.swift in Sources */,
 				C14D2782202A9AFF00F57584 /* Status.swift in Sources */,
 				C1FB98652021A29300DFD00D /* NetworkTools.swift in Sources */,
+				C1140A5F206B37F6004F23FB /* ComposeTitleView.swift in Sources */,
 				C1FB98672021BD9800DFD00D /* UserAccount.swift in Sources */,
 				C1FD1C3F2015CFC200A431CE /* UIBarButtonItem-Extension.swift in Sources */,
 				C14BFA0A1FF48FE1001B1110 /* DiscoverViewController.swift in Sources */,
 				C145172120293E06005EBD35 /* UserAccountViewModel.swift in Sources */,
 				04BAC77C1FFD259800A00B5D /* UIButton-Extension.swift in Sources */,
+				C1140A5C206B23F5004F23FB /* ComposeViewController.swift in Sources */,
 				C14BF9EB1FF48F49001B1110 /* AppDelegate.swift in Sources */,
 				C1FB98602021911200DFD00D /* OAuthViewController.swift in Sources */,
 				C1FD1CF22018549200A431CE /* PopoverViewController.swift in Sources */,
 				C140258A203FEB8200A4B44B /* NSDate-Extension.swift in Sources */,
 				C1FD1C412015D72B00A431CE /* TitleButton.swift in Sources */,
+				C1140A61206B3D21004F23FB /* ComposeTextView.swift in Sources */,
 				C14BFA0C1FF48FE1001B1110 /* ProfileViewController.swift in Sources */,
 				C14BFA0D1FF48FE1001B1110 /* MainViewController.swift in Sources */,
 				C14025C320412A5900A4B44B /* StatusViewModel.swift in Sources */,
