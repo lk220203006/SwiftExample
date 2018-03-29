@@ -12,6 +12,7 @@ class ComposeViewController: UIViewController {
     
     lazy var titleView:ComposeTitleView = ComposeTitleView()
     @IBOutlet weak var textView: ComposeTextView!
+    @IBOutlet weak var toolBar: UIToolbar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +20,16 @@ class ComposeViewController: UIViewController {
         // Do any additional setup after loading the view.
         //设置导航栏
         setNavgationBar()
+        //监听通知
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         textView.becomeFirstResponder()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 // MARK:- 设置UI界面
@@ -44,6 +51,9 @@ extension ComposeViewController{
     }
     @objc private func sendItemClick(){
         
+    }
+    @objc private func keyboardWillChangeFrame(_ note:NSNotification){
+        print(note)
     }
 }
 
