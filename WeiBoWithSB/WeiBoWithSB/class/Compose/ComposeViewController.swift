@@ -7,12 +7,22 @@
 //
 
 import UIKit
-
+@objc
 class ComposeViewController: UIViewController {
+    // MARK:- 控件属性
+    @IBOutlet weak var picPickerBtn: UIButton!
     
+    // MARK:- 懒加载属性
     lazy var titleView:ComposeTitleView = ComposeTitleView()
+    private lazy var images:[UIImage] = [UIImage]()
+    
     @IBOutlet weak var textView: ComposeTextView!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var picPickerView: PicPickerCollectionView!
+    
+    @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
+    @IBOutlet weak var picPickerViewHCons: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +30,7 @@ class ComposeViewController: UIViewController {
         // Do any additional setup after loading the view.
         //设置导航栏
         setNavgationBar()
-        //监听通知
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        setupNotifications()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -30,6 +39,14 @@ class ComposeViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @IBAction func picPickerBtnClick(_ sender: UIButton) {
+        textView.resignFirstResponder()
+        picPickerViewHCons.constant = UIScreen.main.bounds.size.height * 0.65
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 // MARK:- 设置UI界面
@@ -41,6 +58,12 @@ extension ComposeViewController{
         titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
         titleView.layoutIfNeeded()
         navigationItem.titleView = titleView
+    }
+    
+    private func setupNotifications(){
+        //监听通知
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addPhotoClick), name: NSNotification.Name(rawValue: PicPickerAddPhotoNote), object: nil)
     }
 }
 
@@ -54,6 +77,29 @@ extension ComposeViewController{
     }
     @objc private func keyboardWillChangeFrame(_ note:NSNotification){
         print(note)
+        //获取动画执行的时间
+        let duration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        //获取键盘最终y值
+        let endframe = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let y = endframe.origin.y
+        //计算工具栏距离底部的间距
+        let margin = UIScreen.main.bounds.size.height - y
+        toolBarBottomCons.constant = margin
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
+    }
+}
+//MARK:- 添加照片和删除照片的事件
+extension ComposeViewController{
+    @objc private func addPhotoClick(){
+        if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            return
+        }
+        let ipc = UIImagePickerController()
+        ipc.sourceType = .photoLibrary
+        ipc.delegate = self
+        present(ipc, animated: true, completion: nil)
     }
 }
 
@@ -65,5 +111,17 @@ extension ComposeViewController:UITextViewDelegate{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.textView.resignFirstResponder()
+    }
+}
+
+extension ComposeViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print(info)
+        //获取选中的
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        images.append(image)
+        picPickerView.images =  images
+        //退出
+        picker .dismiss(animated: true, completion: nil)
     }
 }

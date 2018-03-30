@@ -13,6 +13,9 @@
 		C1140A5D206B23F5004F23FB /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1140A5B206B23F5004F23FB /* ComposeViewController.xib */; };
 		C1140A5F206B37F6004F23FB /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1140A5E206B37F6004F23FB /* ComposeTitleView.swift */; };
 		C1140A61206B3D21004F23FB /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1140A60206B3D21004F23FB /* ComposeTextView.swift */; };
+		C1140A6A206DD767004F23FB /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1140A69206DD767004F23FB /* PicPickerCollectionView.swift */; };
+		C1140A6D206E13D6004F23FB /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1140A6B206E13D6004F23FB /* PicPickerViewCell.swift */; };
+		C1140A6E206E13D6004F23FB /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1140A6C206E13D6004F23FB /* PicPickerViewCell.xib */; };
 		C140258A203FEB8200A4B44B /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1402589203FEB8200A4B44B /* NSDate-Extension.swift */; };
 		C140258C203FEF3700A4B44B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140258B203FEF3700A4B44B /* User.swift */; };
 		C14025C320412A5900A4B44B /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14025C220412A5900A4B44B /* StatusViewModel.swift */; };
@@ -61,6 +64,9 @@
 		C1140A5B206B23F5004F23FB /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		C1140A5E206B37F6004F23FB /* ComposeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
 		C1140A60206B3D21004F23FB /* ComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
+		C1140A69206DD767004F23FB /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		C1140A6B206E13D6004F23FB /* PicPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
+		C1140A6C206E13D6004F23FB /* PicPickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
 		C1402589203FEB8200A4B44B /* NSDate-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		C140258B203FEF3700A4B44B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C14025C220412A5900A4B44B /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
@@ -161,8 +167,19 @@
 				C1140A60206B3D21004F23FB /* ComposeTextView.swift */,
 				C1140A5A206B23F5004F23FB /* ComposeViewController.swift */,
 				C1140A5B206B23F5004F23FB /* ComposeViewController.xib */,
+				C1140A68206DD734004F23FB /* PicPicker */,
 			);
 			path = Compose;
+			sourceTree = "<group>";
+		};
+		C1140A68206DD734004F23FB /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C1140A69206DD767004F23FB /* PicPickerCollectionView.swift */,
+				C1140A6B206E13D6004F23FB /* PicPickerViewCell.swift */,
+				C1140A6C206E13D6004F23FB /* PicPickerViewCell.xib */,
+			);
+			path = PicPicker;
 			sourceTree = "<group>";
 		};
 		C1451722202942D9005EBD35 /* Welcome */ = {
@@ -397,6 +414,7 @@
 				C14BFA131FF49223001B1110 /* Message.storyboard in Resources */,
 				C1140A5D206B23F5004F23FB /* ComposeViewController.xib in Resources */,
 				C14BFA161FF49239001B1110 /* Discover.storyboard in Resources */,
+				C1140A6E206E13D6004F23FB /* PicPickerViewCell.xib in Resources */,
 				C14BF9F01FF48F49001B1110 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,7 +493,9 @@
 			files = (
 				C1FB98632021950900DFD00D /* Common.swift in Sources */,
 				C145172720294328005EBD35 /* WelcomeViewController.swift in Sources */,
+				C1140A6D206E13D6004F23FB /* PicPickerViewCell.swift in Sources */,
 				C14D2782202A9AFF00F57584 /* Status.swift in Sources */,
+				C1140A6A206DD767004F23FB /* PicPickerCollectionView.swift in Sources */,
 				C1FB98652021A29300DFD00D /* NetworkTools.swift in Sources */,
 				C1140A5F206B37F6004F23FB /* ComposeTitleView.swift in Sources */,
 				C1FB98672021BD9800DFD00D /* UserAccount.swift in Sources */,
