@@ -64,6 +64,7 @@ extension ComposeViewController{
         //监听通知
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addPhotoClick), name: NSNotification.Name(rawValue: PicPickerAddPhotoNote), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removePhotoClick(_:)), name: NSNotification.Name(rawValue: PicPickerRemovePhotoNote), object: nil)
     }
 }
 
@@ -76,7 +77,6 @@ extension ComposeViewController{
         
     }
     @objc private func keyboardWillChangeFrame(_ note:NSNotification){
-        print(note)
         //获取动画执行的时间
         let duration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
         //获取键盘最终y值
@@ -100,6 +100,17 @@ extension ComposeViewController{
         ipc.sourceType = .photoLibrary
         ipc.delegate = self
         present(ipc, animated: true, completion: nil)
+    }
+    
+    @objc private func removePhotoClick(_ note:NSNotification){
+        guard let image = note.object as? UIImage else {
+            return
+        }
+        guard let index = images.index(of: image) else{
+            return
+        }
+        images.remove(at: index)
+        picPickerView.images = images
     }
 }
 

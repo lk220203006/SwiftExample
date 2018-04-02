@@ -19,16 +19,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="137" height="120"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-zu-Nsx">
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-zu-Nsx">
                         <rect key="frame" x="0.0" y="0.0" width="137" height="120"/>
                         <state key="normal" backgroundImage="compose_pic_add"/>
                         <connections>
                             <action selector="addPhotoClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qpk-YE-p7e"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rCI-3Y-Pml">
+                        <rect key="frame" x="0.0" y="0.0" width="137" height="120"/>
+                    </imageView>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2V-lq-9IQ">
                         <rect key="frame" x="113" y="0.0" width="24" height="24"/>
                         <state key="normal" image="compose_photo_close"/>
+                        <connections>
+                            <action selector="removePhotoClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="0qV-zN-IfW"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -36,14 +42,20 @@
                 <constraint firstItem="vdf-zu-Nsx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0cc-NS-0CQ"/>
                 <constraint firstItem="e2V-lq-9IQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="99Q-pH-GFr"/>
                 <constraint firstItem="vdf-zu-Nsx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AA5-sR-RjX"/>
+                <constraint firstItem="rCI-3Y-Pml" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VSO-eP-1wV"/>
+                <constraint firstAttribute="trailing" secondItem="rCI-3Y-Pml" secondAttribute="trailing" id="ZgL-ee-mV4"/>
                 <constraint firstAttribute="trailing" secondItem="e2V-lq-9IQ" secondAttribute="trailing" id="ZpB-kf-7QK"/>
                 <constraint firstAttribute="bottom" secondItem="vdf-zu-Nsx" secondAttribute="bottom" id="daK-53-MJ1"/>
                 <constraint firstAttribute="trailing" secondItem="vdf-zu-Nsx" secondAttribute="trailing" id="fqw-aY-951"/>
+                <constraint firstItem="rCI-3Y-Pml" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vZb-vs-v3S"/>
+                <constraint firstAttribute="bottom" secondItem="rCI-3Y-Pml" secondAttribute="bottom" id="x6I-lN-eWv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="137" height="120"/>
             <connections>
                 <outlet property="addPhotoBtn" destination="vdf-zu-Nsx" id="B0I-7C-Mp1"/>
+                <outlet property="imageView" destination="rCI-3Y-Pml" id="UVH-ah-akS"/>
+                <outlet property="removePhotoBtn" destination="e2V-lq-9IQ" id="htJ-jU-ZTf"/>
             </connections>
             <point key="canvasLocation" x="-101.5" y="16"/>
         </collectionViewCell>

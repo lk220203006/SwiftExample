@@ -13,3 +13,4 @@ let app_secret = "977721f5eac5d6ed3a1b850365b6164b"
 let redirect_url = "http://www.520it.com"
 
 let PicPickerAddPhotoNote = "PicPickerAddPhotoNote"
+let PicPickerRemovePhotoNote = "PicPickerRemovePhotoNote"

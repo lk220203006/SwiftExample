@@ -39,7 +39,7 @@ class HomeViewCell: UITableViewCell {
                 return
             }
             //用户头像
-            iconView.sd_setImage(with: viewModel.profileURL, placeholderImage: UIImage(named: ""), options: .retryFailed, completed: nil)
+            iconView.sd_setImage(with: viewModel.profileURL, placeholderImage: nil, options: .retryFailed, completed: nil)
             //认证图标
             verifiedView.image = viewModel.verifiedImage
             //用户昵称
