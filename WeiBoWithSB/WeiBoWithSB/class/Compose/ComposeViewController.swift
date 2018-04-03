@@ -48,6 +48,15 @@ class ComposeViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    @IBAction func emoticonBtnClick(_ sender: UIButton) {
+        //退出键盘
+        textView.resignFirstResponder()
+        //切换键盘
+        textView.inputView = textView.inputView != nil ? nil:UISwitch()
+        //弹出键盘
+        textView.becomeFirstResponder()
+    }
+    
 }
 // MARK:- 设置UI界面
 extension ComposeViewController{
