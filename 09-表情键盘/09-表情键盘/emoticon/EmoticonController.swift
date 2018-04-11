@@ -11,8 +11,9 @@ import UIKit
 private let EmotionCell = "EmotionCell"
 
 class EmoticonController: UIViewController {
-    private lazy var collectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var collectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: EmotionCollectionViewLayout())
     private lazy var toolBar:UIToolbar = UIToolbar()
+    private lazy var manager:EmoticonManager = EmoticonManager()
 
     //MARK:- 系统回调函数
     override func viewDidLoad() {
@@ -49,9 +50,8 @@ extension EmoticonController{
     
     private func prepareForCollectionView(){
         //注册cell和设置数据源
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: EmotionCell)
+        collectionView.register(EmoticonViewCell.self, forCellWithReuseIdentifier: EmotionCell)
         collectionView.dataSource = self
-        collectionView.setCollectionViewLayout(EmotionCollectionViewLayout(), animated: true)
     }
     
     private func prepareForToolBar(){
@@ -71,20 +71,28 @@ extension EmoticonController{
         toolBar.items = tempItems
         toolBar.tintColor = UIColor.orange
     }
-    
     @objc private func itemClick(_ item:UIBarButtonItem){
-        
+        let tag = item.tag
+        let indexPath = NSIndexPath(item: 0, section: tag)
+        collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: true)
     }
 }
 
 
 extension EmoticonController:UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return manager.packages.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 200
+        let package = manager.packages[section]
+        return package.emoticons.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmotionCell, for: indexPath)
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red:UIColor.blue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmotionCell, for: indexPath) as! EmoticonViewCell
+        let package = manager.packages[indexPath.section]
+        let emoticon = package.emoticons[indexPath.item]
+        cell.emoticon = emoticon
         return cell
     }
 }

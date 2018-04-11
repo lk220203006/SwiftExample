@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         let manager = EmoticonManager()
         for package in manager.packages {
             for emoticon in package.emoticons{
-                print(emoticon)
+//                print(emoticon)
             }
         }
     }
