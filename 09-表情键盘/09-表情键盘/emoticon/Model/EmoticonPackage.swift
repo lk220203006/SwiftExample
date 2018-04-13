@@ -12,8 +12,10 @@ class EmoticonPackage: NSObject {
     var emoticons:[Emoticon] = [Emoticon]()
     
     init(id:String) {
+        super.init()
         if id == "" {
             //最近分组
+            addEmptyEmoticon(isRecently: true)
             return
         }
         //根据id拼接infoplist的路径
@@ -33,5 +35,17 @@ class EmoticonPackage: NSObject {
                 index = 0
             }
         }
+        addEmptyEmoticon(isRecently: false)
+    }
+    
+    private func addEmptyEmoticon(isRecently:Bool){
+        let count = emoticons.count % 21
+        if count == 0 && !isRecently {
+            return
+        }
+        for _ in count..<20 {
+            emoticons.append(Emoticon(isEmpty: true))
+        }
+        emoticons.append(Emoticon(isRemove: true))
     }
 }

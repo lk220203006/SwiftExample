@@ -11,6 +11,9 @@ import UIKit
 private let EmotionCell = "EmotionCell"
 
 class EmoticonController: UIViewController {
+    //MARK:- 定义属性
+    var emoticonCallBack: (_ emoticon:Emoticon) -> ()
+    
     private lazy var collectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: EmotionCollectionViewLayout())
     private lazy var toolBar:UIToolbar = UIToolbar()
     private lazy var manager:EmoticonManager = EmoticonManager()
@@ -22,7 +25,18 @@ class EmoticonController: UIViewController {
         // Do any additional setup after loading the view.
         setupUI()
     }
-
+    
+    //MARK:- 自定义构造函数
+    init(emoticonCallBack:@escaping (_ emoticon:Emoticon) -> ()){
+        self.emoticonCallBack = emoticonCallBack
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
 
 
@@ -52,6 +66,7 @@ extension EmoticonController{
         //注册cell和设置数据源
         collectionView.register(EmoticonViewCell.self, forCellWithReuseIdentifier: EmotionCell)
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     private func prepareForToolBar(){
@@ -79,7 +94,7 @@ extension EmoticonController{
 }
 
 
-extension EmoticonController:UICollectionViewDataSource{
+extension EmoticonController:UICollectionViewDataSource,UICollectionViewDelegate{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return manager.packages.count
     }
@@ -94,6 +109,33 @@ extension EmoticonController:UICollectionViewDataSource{
         let emoticon = package.emoticons[indexPath.item]
         cell.emoticon = emoticon
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //取出点击的表情
+        let package = manager.packages[indexPath.section]
+        let emoticon = package.emoticons[indexPath.item]
+        //将点击的表情插入最近分组中
+        insertRecentlyEmoticon(emoticon: emoticon)
+        //将表情回掉给外界控制器
+        emoticonCallBack(emoticon)
+    }
+    
+    private func insertRecentlyEmoticon(emoticon:Emoticon){
+        //如果是空白表情或者删除按钮，不需要插入
+        if emoticon.isRemove || emoticon.isEmpty {
+            return
+        }
+        //删除一个表情
+        if manager.packages.first!.emoticons.contains(emoticon) {
+            let index = manager.packages.first?.emoticons.index(of: emoticon)
+            manager.packages.first?.emoticons.remove(at: index!)
+        }
+        else{
+            manager.packages.first?.emoticons.remove(at: 19)
+        }
+        //将emoticon插入最近分组中
+        manager.packages.first?.emoticons.insert(emoticon, at: 0)
     }
 }
 
