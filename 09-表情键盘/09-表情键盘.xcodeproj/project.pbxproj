@@ -18,6 +18,8 @@
 		C14DF748207C96EB003937E6 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14DF747207C96EB003937E6 /* EmoticonPackage.swift */; };
 		C14DF74A207C970D003937E6 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14DF749207C970D003937E6 /* Emoticon.swift */; };
 		C14DF74C207DFA73003937E6 /* EmoticonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14DF74B207DFA73003937E6 /* EmoticonViewCell.swift */; };
+		C156F274208476F5008A6F85 /* EmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156F273208476F5008A6F85 /* EmoticonAttachment.swift */; };
+		C156F27620847C85008A6F85 /* UITextView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156F27520847C85008A6F85 /* UITextView-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		C14DF747207C96EB003937E6 /* EmoticonPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
 		C14DF749207C970D003937E6 /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 		C14DF74B207DFA73003937E6 /* EmoticonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmoticonViewCell.swift; path = Model/EmoticonViewCell.swift; sourceTree = "<group>"; };
+		C156F273208476F5008A6F85 /* EmoticonAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAttachment.swift; sourceTree = "<group>"; };
+		C156F27520847C85008A6F85 /* UITextView-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				C14DF744207C9688003937E6 /* Model */,
 				C1130B0820721710003AF5A0 /* EmoticonController.swift */,
 				C14DF74B207DFA73003937E6 /* EmoticonViewCell.swift */,
+				C156F273208476F5008A6F85 /* EmoticonAttachment.swift */,
+				C156F27520847C85008A6F85 /* UITextView-Extension.swift */,
 				C14DF742207C9590003937E6 /* Emoticons.bundle */,
 			);
 			path = emoticon;
@@ -173,6 +179,8 @@
 			files = (
 				C14DF74C207DFA73003937E6 /* EmoticonViewCell.swift in Sources */,
 				C1130AF820721195003AF5A0 /* ViewController.swift in Sources */,
+				C156F27620847C85008A6F85 /* UITextView-Extension.swift in Sources */,
+				C156F274208476F5008A6F85 /* EmoticonAttachment.swift in Sources */,
 				C14DF74A207C970D003937E6 /* Emoticon.swift in Sources */,
 				C14DF746207C96A9003937E6 /* EmoticonManager.swift in Sources */,
 				C14DF748207C96EB003937E6 /* EmoticonPackage.swift in Sources */,

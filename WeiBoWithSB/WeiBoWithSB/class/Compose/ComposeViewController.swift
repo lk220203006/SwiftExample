@@ -10,15 +10,19 @@ import UIKit
 @objc
 class ComposeViewController: UIViewController {
     // MARK:- 控件属性
+    @IBOutlet weak var textView: ComposeTextView!
+    @IBOutlet weak var picPickerView: PicPickerCollectionView!
     @IBOutlet weak var picPickerBtn: UIButton!
     
     // MARK:- 懒加载属性
     lazy var titleView:ComposeTitleView = ComposeTitleView()
     private lazy var images:[UIImage] = [UIImage]()
-    
-    @IBOutlet weak var textView: ComposeTextView!
+    private lazy var emoticonVC:EmoticonController = EmoticonController {[weak self] (emoticon) in
+        self?.textView.insertEmoticon(emoticon: emoticon)
+        self?.textViewDidChange(self!.textView)
+    }
+
     @IBOutlet weak var toolBar: UIToolbar!
-    @IBOutlet weak var picPickerView: PicPickerCollectionView!
     
     @IBOutlet weak var toolBarBottomCons: NSLayoutConstraint!
     @IBOutlet weak var picPickerViewHCons: NSLayoutConstraint!
@@ -52,7 +56,7 @@ class ComposeViewController: UIViewController {
         //退出键盘
         textView.resignFirstResponder()
         //切换键盘
-        textView.inputView = textView.inputView != nil ? nil:UISwitch()
+        textView.inputView = textView.inputView != nil ? nil:emoticonVC.view
         //弹出键盘
         textView.becomeFirstResponder()
     }
@@ -83,7 +87,7 @@ extension ComposeViewController{
         dismiss(animated: true, completion: nil)
     }
     @objc private func sendItemClick(){
-        
+        print(textView.getEmoticonString())
     }
     @objc private func keyboardWillChangeFrame(_ note:NSNotification){
         //获取动画执行的时间
