@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+
 @objc
 class ComposeViewController: UIViewController {
     // MARK:- 控件属性
@@ -87,7 +89,29 @@ extension ComposeViewController{
         dismiss(animated: true, completion: nil)
     }
     @objc private func sendItemClick(){
-        print(textView.getEmoticonString())
+        //键盘退出
+        textView.resignFirstResponder()
+        //获取发送微博的微博正文
+        let statusText = textView.getEmoticonString()
+        //定义回掉的闭包
+        let finishedCallback = {(isSuccess:Bool)->() in
+            if !isSuccess{
+                SVProgressHUD.showError(withStatus: "发送微博失败")
+                return
+            }
+            else{
+                SVProgressHUD.showSuccess(withStatus: "发送微博成功")
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        //获取用户选中的图片
+        if let image = images.first{
+            NetworkTools.shareInstance.sendStatus(statusText: statusText, image: image,isSuccess:finishedCallback)
+        }
+        else{
+            //调用接口发送微博
+            NetworkTools.shareInstance.sendStatus(statusText: statusText,isSuccess:finishedCallback)
+            }
     }
     @objc private func keyboardWillChangeFrame(_ note:NSNotification){
         //获取动画执行的时间

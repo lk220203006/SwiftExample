@@ -20,6 +20,8 @@ class NetworkTools: AFHTTPSessionManager {
     static let shareInstance:NetworkTools = {
         let tools = NetworkTools()
         tools.responseSerializer.acceptableContentTypes?.insert("text/html")
+        tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        tools.responseSerializer.acceptableContentTypes?.insert("text/JavaScript")
         return tools
     }()
 }
@@ -83,5 +85,44 @@ extension NetworkTools{
             }
             finished(resultDict["statuses"] as? [[String : AnyObject]],error)
         })
+    }
+}
+//MARK:- 发送微博
+extension NetworkTools{
+    func sendStatus(statusText:String,isSuccess:@escaping (_ isSuccess:Bool)->()){
+//        let urlString = "http://api.t.sina.com.cn/statuses/update.json"
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        let parameters = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!,
+                          "status":statusText
+            ] as [String : Any]
+        request(methodType: .POST, urlString: urlString, parameters: parameters as [String:AnyObject], finished: {(result,error) -> () in
+            if result != nil{
+                isSuccess(true)
+            }
+            else{
+                isSuccess(false)
+            }
+        })
+    }
+}
+
+extension NetworkTools{
+    func sendStatus(statusText:String,image:UIImage,isSuccess:@escaping (_ isSuccess:Bool)->()){
+//        let urlString = "http://api.t.sina.com.cn/statuses/upload.json"
+        let urlString = "https://api.weibo.com/2/statuses/upload.json"
+        let parameters = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!,
+                          "status":statusText
+            ] as [String : Any]
+        post(urlString, parameters: parameters, constructingBodyWith: { (formData)->Void in
+            if let imageData = UIImageJPEGRepresentation(image, 0.5){
+                formData.appendPart(withFileData: imageData, name: "pic", fileName: "123.png", mimeType: "image/png")
+            }
+            
+        }, progress: nil, success: { (_, _) in
+            isSuccess(true)
+        }) { (_, error)->Void in
+            isSuccess(false)
+            print(error)
+        }
     }
 }
