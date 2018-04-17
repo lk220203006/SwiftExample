@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SVProgressHUD
 
 private let PhotoBrowserCell = "PhotoBrowserCell"
 
@@ -31,9 +32,16 @@ class PhotoBrowserController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        super.loadView()
+        view.bounds.size.width += 20
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        //滚动到对应的图片
+        collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: false)
     }
 }
 
@@ -72,6 +80,23 @@ extension PhotoBrowserController{
     }
     
     @objc private func saveBtnClick(){
+        //获取当前正在显示的image
+        let cell = collectionView.visibleCells.first as! PhotoBrowserViewCell
+        guard let image = cell.imageView.image else {
+            return
+        }
+        //将image对象保存相册
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    @objc private func image(image:UIImage,didFinishSavingWithError error:NSError?,contextInfo:AnyObject){
+        if error != nil {
+            SVProgressHUD.showError(withStatus: "保存失败")
+            SVProgressHUD.dismiss(withDelay: 1.5)
+        }
+        else{
+            SVProgressHUD.showSuccess(withStatus: "保存成功")
+            SVProgressHUD.dismiss(withDelay: 1.5)
+        }
     }
 }
 
@@ -83,7 +108,14 @@ extension PhotoBrowserController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoBrowserCell, for: indexPath) as! PhotoBrowserViewCell
         cell.picURL = picURLs[indexPath.item]
+        cell.delegate = self
         return cell
+    }
+}
+
+extension PhotoBrowserController:PhotoBrowserViewCellDelegate{
+    func imageViewClick() {
+        closeBtnClick()
     }
 }
 
@@ -91,7 +123,7 @@ class PhotoBrowserCollectionViewLayout:UICollectionViewFlowLayout{
     override func prepare() {
         super.prepare()
         
-        itemSize = UIScreen.main.bounds.size
+        itemSize = collectionView!.frame.size
         minimumLineSpacing = 0
         minimumInteritemSpacing = 0
         scrollDirection = .horizontal

@@ -52,6 +52,7 @@
 		C156F2F020859F73008A6F85 /* HYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156F2EF20859F73008A6F85 /* HYLabel.swift */; };
 		C156F2F32085BF14008A6F85 /* PhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156F2F22085BF14008A6F85 /* PhotoBrowserController.swift */; };
 		C156F2F52085C9D2008A6F85 /* PhotoBrowserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156F2F42085C9D2008A6F85 /* PhotoBrowserViewCell.swift */; };
+		C156F2F72085D212008A6F85 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156F2F62085D212008A6F85 /* ProgressView.swift */; };
 		C1831BF72019BE9B00520122 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1831BF62019BE9B00520122 /* PopoverAnimator.swift */; };
 		C1CBF393200357C70078218D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBF392200357C70078218D /* BaseViewController.swift */; };
 		C1CBF3952003599B0078218D /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBF3942003599B0078218D /* VisitorView.swift */; };
@@ -117,6 +118,7 @@
 		C156F2EF20859F73008A6F85 /* HYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYLabel.swift; sourceTree = "<group>"; };
 		C156F2F22085BF14008A6F85 /* PhotoBrowserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserController.swift; sourceTree = "<group>"; };
 		C156F2F42085C9D2008A6F85 /* PhotoBrowserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewCell.swift; sourceTree = "<group>"; };
+		C156F2F62085D212008A6F85 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		C1831BF62019BE9B00520122 /* PopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		C1CBF392200357C70078218D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C1CBF3942003599B0078218D /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			children = (
 				C156F2F22085BF14008A6F85 /* PhotoBrowserController.swift */,
 				C156F2F42085C9D2008A6F85 /* PhotoBrowserViewCell.swift */,
+				C156F2F62085D212008A6F85 /* ProgressView.swift */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				C145172720294328005EBD35 /* WelcomeViewController.swift in Sources */,
 				C156F2EE2085992D008A6F85 /* EmoticonController.swift in Sources */,
 				C156F2EB2085992D008A6F85 /* EmoticonPackage.swift in Sources */,
+				C156F2F72085D212008A6F85 /* ProgressView.swift in Sources */,
 				C1140A6D206E13D6004F23FB /* PicPickerViewCell.swift in Sources */,
 				C156F2F52085C9D2008A6F85 /* PhotoBrowserViewCell.swift in Sources */,
 				C14D2782202A9AFF00F57584 /* Status.swift in Sources */,
