@@ -22,6 +22,7 @@ class HomeViewController: BaseViewController {
     
     private lazy var viewModels:[StatusViewModel] = [StatusViewModel]()
     private lazy var tipLabel:UILabel = UILabel()
+    private lazy var photoBrowserAnimator:PhotoBrowserAnimator = PhotoBrowserAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +139,8 @@ extension HomeViewController{
         let picURLs = note.userInfo![ShowPhotoBrowserUrlsKey] as! [NSURL]
         //创建控制器
         let photoBrowserVC = PhotoBrowserController(indexPath: indexPath, picURLs: picURLs)
+        photoBrowserVC.modalPresentationStyle = .custom
+        photoBrowserVC.transitioningDelegate = photoBrowserAnimator
         //以modal形式弹出控制器
         present(photoBrowserVC, animated: true, completion: nil)
     }
