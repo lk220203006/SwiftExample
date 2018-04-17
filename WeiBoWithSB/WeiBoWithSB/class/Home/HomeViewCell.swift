@@ -21,9 +21,9 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var vipView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: HYLabel!
     @IBOutlet weak var picView: PicCollectionView!
-    @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var retweetedContentLabel: HYLabel!
     @IBOutlet weak var retweetedBgView: UIView!
     
     //MARK:- 约束的属性
@@ -56,7 +56,7 @@ class HomeViewCell: UITableViewCell {
                 sourceLabel.text = nil
             }
             //设置正文
-            contentLabel.text = viewModel.status?.text
+            contentLabel.attributedText = FindEmoticon.shareInstance.findAttrString(statusText: viewModel.status?.text, font: contentLabel.font)
             //设置昵称的文字颜色
             screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.black : UIColor.orange
             //计算picView的宽度和高度的约束
@@ -69,7 +69,8 @@ class HomeViewCell: UITableViewCell {
             if viewModel.status?.retweeted_status != nil {
                 if let screenName = viewModel.status?.retweeted_status?.user?.screen_name,
                     let retweetedText = viewModel.status?.retweeted_status?.text{
-                    retweetedContentLabel.text = "@" + screenName + ":" + retweetedText
+                    let retweetedT = "@" + screenName + ":" + retweetedText
+                    retweetedContentLabel.attributedText = FindEmoticon.shareInstance.findAttrString(statusText: retweetedT, font: retweetedContentLabel.font)
                     retweetedContentLabelTopCons.constant = 15;
                 }
                 retweetedBgView.isHidden = false
@@ -85,10 +86,43 @@ class HomeViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        //取出picview的布局
-//        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
-//        let imageViewWH = (UIScreen.main.bounds.width - 2*edgeMargin-2*itemMaigin)/3
-//        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
+        contentLabel.matchTextColor = UIColor.orange
+        retweetedContentLabel.matchTextColor = UIColor.orange
+        // 监听@谁谁谁的点击
+        contentLabel.userTapHandler = { (label, user, range) in
+            print(user)
+            print(range)
+        }
+        
+        // 监听链接的点击
+        contentLabel.linkTapHandler = { (label, link, range) in
+            print(link)
+            print(range)
+        }
+        
+        // 监听话题的点击
+        contentLabel.topicTapHandler = { (label, topic, range) in
+            print(topic)
+            print(range)
+        }
+        
+        // 监听@谁谁谁的点击
+        retweetedContentLabel.userTapHandler = { (label, user, range) in
+            print(user)
+            print(range)
+        }
+        
+        // 监听链接的点击
+        retweetedContentLabel.linkTapHandler = { (label, link, range) in
+            print(link)
+            print(range)
+        }
+        
+        // 监听话题的点击
+        retweetedContentLabel.topicTapHandler = { (label, topic, range) in
+            print(topic)
+            print(range)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

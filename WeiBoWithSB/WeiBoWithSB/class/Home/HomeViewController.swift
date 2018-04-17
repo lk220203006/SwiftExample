@@ -44,6 +44,8 @@ class HomeViewController: BaseViewController {
         
         //设置提示的label
         setupTipLabel()
+        
+        setupNotifications()
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,6 +114,10 @@ extension HomeViewController{
         tipLabel.textAlignment = .center
         tipLabel.isHidden = true
     }
+    
+    private func setupNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoBrowser(_:)), name: NSNotification.Name(rawValue: ShowPhotoBrowserNote), object: nil)
+    }
 }
 // MARK:- 事件监听
 extension HomeViewController{
@@ -125,6 +131,15 @@ extension HomeViewController{
         vc.transitioningDelegate = popoverAnimator
         popoverAnimator.presentedFrame = CGRect(x: UIScreen.main.bounds.width*0.5-90, y: 55, width: 180, height: 250)
         present(vc, animated: true, completion: nil)
+    }
+    
+    @objc private func showPhotoBrowser(_ note:Notification){
+        let indexPath = note.userInfo![ShowPhotoBrowserIndexKey] as! NSIndexPath
+        let picURLs = note.userInfo![ShowPhotoBrowserUrlsKey] as! [NSURL]
+        //创建控制器
+        let photoBrowserVC = PhotoBrowserController(indexPath: indexPath, picURLs: picURLs)
+        //以modal形式弹出控制器
+        present(photoBrowserVC, animated: true, completion: nil)
     }
 }
 

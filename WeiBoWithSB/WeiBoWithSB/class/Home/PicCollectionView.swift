@@ -37,7 +37,12 @@ extension PicCollectionView:UICollectionViewDataSource{
 }
 
 extension PicCollectionView:UICollectionViewDelegate{
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //获取通知需要传递的参数
+        let userInfo = [ShowPhotoBrowserIndexKey:indexPath,ShowPhotoBrowserUrlsKey:picURLs] as [String : Any]
+        //发出通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ShowPhotoBrowserNote), object: nil, userInfo: userInfo)
+    }
 }
 
 class PickCollectionViewCell: UICollectionViewCell {
