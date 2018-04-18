@@ -137,10 +137,19 @@ extension HomeViewController{
     @objc private func showPhotoBrowser(_ note:Notification){
         let indexPath = note.userInfo![ShowPhotoBrowserIndexKey] as! NSIndexPath
         let picURLs = note.userInfo![ShowPhotoBrowserUrlsKey] as! [NSURL]
+        
+        let object = note.object as! PicCollectionView
+        
         //创建控制器
         let photoBrowserVC = PhotoBrowserController(indexPath: indexPath, picURLs: picURLs)
+        //设置modal样式
         photoBrowserVC.modalPresentationStyle = .custom
+        //设置转场的代理
         photoBrowserVC.transitioningDelegate = photoBrowserAnimator
+        //设置动画的代理
+        photoBrowserAnimator.presentedDelegate = object
+        photoBrowserAnimator.dismissDelegate = photoBrowserVC
+        photoBrowserAnimator.indexPath = indexPath
         //以modal形式弹出控制器
         present(photoBrowserVC, animated: true, completion: nil)
     }
