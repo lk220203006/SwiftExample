@@ -24,6 +24,7 @@ class NetworkTools: AFHTTPSessionManager {
         tools.responseSerializer.acceptableContentTypes?.insert("text/JavaScript")
         return tools
     }()
+    var user:User?
 }
 
 // MARK:- 封装请求方法
@@ -41,6 +42,8 @@ extension NetworkTools{
             print("网络请求错误 \(error.localizedDescription)")
             finished(nil,error)
         }
+        
+        
         
         if methodType == .GET {
             get(urlString, parameters: parameters, progress: nil, success: success, failure:failure)
